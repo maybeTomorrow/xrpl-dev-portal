@@ -57,6 +57,9 @@ languages:
     -   code: en
         display_name: Eng
         prefix: "/"
+    -   code: zh
+        display_name: 中文
+        prefix: "/zh/"
     -   code: ja
         display_name: 日本語
         prefix: "/ja/"
@@ -79,6 +82,15 @@ targets:
         display_name: XRPL.org
         <<: *defaults
         prefix: ""
+        readability_goals:
+            flesch_reading_ease: 50 # or higher
+        blurb: XRPL.org is a community-driven resource for all things XRP and the XRP Ledger—your source for technical information, reference materials and tools.
+    -   name: zh
+        lang: zh
+        display_name: HWAL.org
+        <<: *defaults
+        prefix: "/zh/"
+        locale_file: locale/zh/LC_MESSAGES/messages.mo
         readability_goals:
             flesch_reading_ease: 50 # or higher
         blurb: XRPL.org is a community-driven resource for all things XRP and the XRP Ledger—your source for technical information, reference materials and tools.
@@ -361,6 +373,16 @@ pages:
         top_nav_name: Docs
         targets:
             - en
+
+    -   name: 构建
+        template: template-landing-docs.html
+        html: docs.html
+        parent: index.html
+        sidebar: disabled
+        top_nav_level: 1
+        top_nav_name: Docs
+        targets:
+            - zh
 
     -   name: 作る
         template: template-landing-docs.html
@@ -1056,6 +1078,7 @@ pages:
         targets:
             - en
             - ja
+            - zh
 
         # TODO: translate this page name and blurb
     -   name: Production Readiness
@@ -1791,6 +1814,17 @@ pages:
         targets:
             - en
 
+    -   name: References
+        longer_name: API References
+        template: template-landing-references.html
+        html: references.html
+        parent: docs.html
+        top_nav_level: 2
+        sidebar: disabled
+        blurb: Complete references for different interfaces to the XRP Ledger.
+        targets:
+            - zh
+
     -   name: リファレンス
         longer_name: API リファレンス
         template: template-landing-references.html
@@ -1810,189 +1844,334 @@ pages:
         blurb: Features and rules of the XRP Ledger protocol, regardless of how you access it.
         targets:
             - en
+            - zh
             - ja
+
 
     -   md: references/protocol-reference/basic-data-types.md
         targets:
             - en
 
+
+    -   md: references/protocol-reference/basic-data-types.zh.md
+        targets:
+            - zh
+
     -   md: references/protocol-reference/basic-data-types.ja.md
         targets:
             - ja
+
 
     -   md: references/protocol-reference/base58-encodings.md
         targets:
             - en
 
+
+    -   md: references/protocol-reference/base58-encodings.zh.md
+        targets:
+            - zh
+
     -   md: references/protocol-reference/base58-encodings.ja.md
         targets:
             - ja
+
 
     -   md: references/protocol-reference/currency-formats.md
         targets:
             - en
 
+
+    -   md: references/protocol-reference/currency-formats.zh.md
+        targets:
+            - zh
+
     -   md: references/protocol-reference/currency-formats.ja.md
         targets:
             - ja
+
 
     -   md: references/protocol-reference/ledger-data/ledger-data-formats.md
         targets:
             - en
 
+
+    -   md: references/protocol-reference/ledger-data/ledger-data-formats.zh.md
+        targets:
+            - zh
+
     -   md: references/protocol-reference/ledger-data/ledger-data-formats.ja.md
         targets:
             - ja
+
 
     -   md: references/protocol-reference/ledger-data/ledger-header.md
         targets:
             - en
 
+
+    -   md: references/protocol-reference/ledger-data/ledger-header.zh.md
+        targets:
+            - zh
+
     -   md: references/protocol-reference/ledger-data/ledger-header.ja.md
         targets:
             - ja
+
 
     -   md: references/protocol-reference/ledger-data/ledger-object-ids.md
         targets:
             - en
 
+
+    -   md: references/protocol-reference/ledger-data/ledger-object-ids.zh.md
+        targets:
+            - zh
+
     -   md: references/protocol-reference/ledger-data/ledger-object-ids.ja.md
         targets:
             - ja
+
 
     -   md: references/protocol-reference/ledger-data/ledger-object-types/ledger-object-types.md
         targets:
             - en
 
+
+    -   md: references/protocol-reference/ledger-data/ledger-object-types/ledger-object-types.zh.md
+        targets:
+            - zh
+
     -   md: references/protocol-reference/ledger-data/ledger-object-types/ledger-object-types.ja.md
         targets:
             - ja
+
 
     -   md: references/protocol-reference/ledger-data/ledger-object-types/accountroot.md
         targets:
             - en
 
+
+    -   md: references/protocol-reference/ledger-data/ledger-object-types/accountroot.zh.md
+        targets:
+            - zh
+
     -   md: references/protocol-reference/ledger-data/ledger-object-types/accountroot.ja.md
         targets:
             - ja
+
 
     -   md: references/protocol-reference/ledger-data/ledger-object-types/amendments.md
         targets:
             - en
 
+
+    -   md: references/protocol-reference/ledger-data/ledger-object-types/amendments.zh.md
+        targets:
+            - zh
+
     -   md: references/protocol-reference/ledger-data/ledger-object-types/amendments.ja.md
         targets:
             - ja
+
 
     -   md: references/protocol-reference/ledger-data/ledger-object-types/check.md
         targets:
             - en
 
+
+    -   md: references/protocol-reference/ledger-data/ledger-object-types/check.zh.md
+        targets:
+            - zh
+
     -   md: references/protocol-reference/ledger-data/ledger-object-types/check.ja.md
         targets:
             - ja
+
 
     -   md: references/protocol-reference/ledger-data/ledger-object-types/depositpreauth.md
         targets:
             - en
 
+
+    -   md: references/protocol-reference/ledger-data/ledger-object-types/depositpreauth.zh.md
+        targets:
+            - zh
+
     -   md: references/protocol-reference/ledger-data/ledger-object-types/depositpreauth.ja.md
         targets:
             - ja
+
 
     -   md: references/protocol-reference/ledger-data/ledger-object-types/directorynode.md
         targets:
             - en
 
+
+    -   md: references/protocol-reference/ledger-data/ledger-object-types/directorynode.zh.md
+        targets:
+            - zh
+
     -   md: references/protocol-reference/ledger-data/ledger-object-types/directorynode.ja.md
         targets:
             - ja
+
 
     -   md: references/protocol-reference/ledger-data/ledger-object-types/escrow.md
         targets:
             - en
 
+
+    -   md: references/protocol-reference/ledger-data/ledger-object-types/escrow.zh.md
+        targets:
+            - zh
+
     -   md: references/protocol-reference/ledger-data/ledger-object-types/escrow.ja.md
         targets:
             - ja
+
 
     -   md: references/protocol-reference/ledger-data/ledger-object-types/feesettings.md
         targets:
             - en
 
+
+    -   md: references/protocol-reference/ledger-data/ledger-object-types/feesettings.zh.md
+        targets:
+            - zh
+
     -   md: references/protocol-reference/ledger-data/ledger-object-types/feesettings.ja.md
         targets:
             - ja
+
 
     -   md: references/protocol-reference/ledger-data/ledger-object-types/ledgerhashes.md
         targets:
             - en
 
+
+    -   md: references/protocol-reference/ledger-data/ledger-object-types/ledgerhashes.zh.md
+        targets:
+            - zh
+
     -   md: references/protocol-reference/ledger-data/ledger-object-types/ledgerhashes.ja.md
         targets:
             - ja
 
+
     -   md: references/protocol-reference/ledger-data/ledger-object-types/negativeunl.md
         targets:
             - en
+
+
+    -   md: references/protocol-reference/ledger-data/ledger-object-types/negativeunl.zh.md
+        targets:
+            - zh
             - ja
+
 
     -   md: references/protocol-reference/ledger-data/ledger-object-types/offer.md
         targets:
             - en
 
+
+    -   md: references/protocol-reference/ledger-data/ledger-object-types/offer.zh.md
+        targets:
+            - zh
+
     -   md: references/protocol-reference/ledger-data/ledger-object-types/offer.ja.md
         targets:
             - ja
+
 
     -   md: references/protocol-reference/ledger-data/ledger-object-types/paychannel.md
         targets:
             - en
 
+
+    -   md: references/protocol-reference/ledger-data/ledger-object-types/paychannel.zh.md
+        targets:
+            - zh
+
     -   md: references/protocol-reference/ledger-data/ledger-object-types/paychannel.ja.md
         targets:
             - ja
+
 
     -   md: references/protocol-reference/ledger-data/ledger-object-types/ripplestate.md
         targets:
             - en
 
+
+    -   md: references/protocol-reference/ledger-data/ledger-object-types/ripplestate.zh.md
+        targets:
+            - zh
+
     -   md: references/protocol-reference/ledger-data/ledger-object-types/ripplestate.ja.md
         targets:
             - ja
+
 
     -   md: references/protocol-reference/ledger-data/ledger-object-types/signerlist.md
         targets:
             - en
 
+
+    -   md: references/protocol-reference/ledger-data/ledger-object-types/signerlist.zh.md
+        targets:
+            - zh
+
     -   md: references/protocol-reference/ledger-data/ledger-object-types/signerlist.ja.md
         targets:
             - ja
 
+
     -   md: references/protocol-reference/ledger-data/ledger-object-types/ticket.md
         targets:
             - en
+
+
+    -   md: references/protocol-reference/ledger-data/ledger-object-types/ticket.zh.md
+        targets:
+            - zh
             - ja
+
 
     -   md: references/protocol-reference/transactions/transaction-formats.md
         targets:
             - en
 
+
+    -   md: references/protocol-reference/transactions/transaction-formats.zh.md
+        targets:
+            - zh
+
     -   md: references/protocol-reference/transactions/transaction-formats.ja.md
         targets:
             - ja
+
 
     -   md: references/protocol-reference/transactions/transaction-common-fields.md
         targets:
             - en
 
+
+    -   md: references/protocol-reference/transactions/transaction-common-fields.zh.md
+        targets:
+            - zh
+
     -   md: references/protocol-reference/transactions/transaction-common-fields.ja.md
         targets:
             - ja
 
+
     -   md: references/protocol-reference/transactions/transaction-types/transaction-types.md
         targets:
             - en
+
+
+    -   md: references/protocol-reference/transactions/transaction-types/transaction-types.zh.md
+        targets:
+            - zh
 
     -   md: references/protocol-reference/transactions/transaction-types/transaction-types.ja.md
         targets:
@@ -2000,261 +2179,459 @@ pages:
 
     # TODO: translate _snippets/tx-fields-intro.md
 
+
     -   md: references/protocol-reference/transactions/transaction-types/accountset.md
         targets:
             - en
+
+
+    -   md: references/protocol-reference/transactions/transaction-types/accountset.zh.md
+        targets:
+            - zh
 
     -   md: references/protocol-reference/transactions/transaction-types/accountset.ja.md
         targets:
             - ja
 
+
     -   md: references/protocol-reference/transactions/transaction-types/accountdelete.md
         targets:
             - en
+
+
+    -   md: references/protocol-reference/transactions/transaction-types/accountdelete.zh.md
+        targets:
+            - zh
 
     -   md: references/protocol-reference/transactions/transaction-types/accountdelete.ja.md
         targets:
             - ja
 
+
     -   md: references/protocol-reference/transactions/transaction-types/checkcancel.md
         targets:
             - en
+
+
+    -   md: references/protocol-reference/transactions/transaction-types/checkcancel.zh.md
+        targets:
+            - zh
 
     -   md: references/protocol-reference/transactions/transaction-types/checkcancel.ja.md
         targets:
             - ja
 
+
     -   md: references/protocol-reference/transactions/transaction-types/checkcash.md
         targets:
             - en
+
+
+    -   md: references/protocol-reference/transactions/transaction-types/checkcash.zh.md
+        targets:
+            - zh
 
     -   md: references/protocol-reference/transactions/transaction-types/checkcash.ja.md
         targets:
             - ja
 
+
     -   md: references/protocol-reference/transactions/transaction-types/checkcreate.md
         targets:
             - en
+
+
+    -   md: references/protocol-reference/transactions/transaction-types/checkcreate.zh.md
+        targets:
+            - zh
 
     -   md: references/protocol-reference/transactions/transaction-types/checkcreate.ja.md
         targets:
             - ja
 
+
     -   md: references/protocol-reference/transactions/transaction-types/depositpreauth.md
         targets:
             - en
+
+
+    -   md: references/protocol-reference/transactions/transaction-types/depositpreauth.zh.md
+        targets:
+            - zh
 
     -   md: references/protocol-reference/transactions/transaction-types/depositpreauth.ja.md
         targets:
             - ja
 
+
     -   md: references/protocol-reference/transactions/transaction-types/escrowcancel.md
         targets:
             - en
+
+
+    -   md: references/protocol-reference/transactions/transaction-types/escrowcancel.zh.md
+        targets:
+            - zh
 
     -   md: references/protocol-reference/transactions/transaction-types/escrowcancel.ja.md
         targets:
             - ja
 
+
     -   md: references/protocol-reference/transactions/transaction-types/escrowcreate.md
         targets:
             - en
+
+
+    -   md: references/protocol-reference/transactions/transaction-types/escrowcreate.zh.md
+        targets:
+            - zh
 
     -   md: references/protocol-reference/transactions/transaction-types/escrowcreate.ja.md
         targets:
             - ja
 
+
     -   md: references/protocol-reference/transactions/transaction-types/escrowfinish.md
         targets:
             - en
+
+
+    -   md: references/protocol-reference/transactions/transaction-types/escrowfinish.zh.md
+        targets:
+            - zh
 
     -   md: references/protocol-reference/transactions/transaction-types/escrowfinish.ja.md
         targets:
             - ja
 
+
     -   md: references/protocol-reference/transactions/transaction-types/offercancel.md
         targets:
             - en
+
+
+    -   md: references/protocol-reference/transactions/transaction-types/offercancel.zh.md
+        targets:
+            - zh
 
     -   md: references/protocol-reference/transactions/transaction-types/offercancel.ja.md
         targets:
             - ja
 
+
     -   md: references/protocol-reference/transactions/transaction-types/offercreate.md
         targets:
             - en
+
+
+    -   md: references/protocol-reference/transactions/transaction-types/offercreate.zh.md
+        targets:
+            - zh
 
     -   md: references/protocol-reference/transactions/transaction-types/offercreate.ja.md
         targets:
             - ja
 
+
     -   md: references/protocol-reference/transactions/transaction-types/payment.md
         targets:
             - en
+
+
+    -   md: references/protocol-reference/transactions/transaction-types/payment.zh.md
+        targets:
+            - zh
 
     -   md: references/protocol-reference/transactions/transaction-types/payment.ja.md
         targets:
             - ja
 
+
     -   md: references/protocol-reference/transactions/transaction-types/paymentchannelclaim.md
         targets:
             - en
+
+
+    -   md: references/protocol-reference/transactions/transaction-types/paymentchannelclaim.zh.md
+        targets:
+            - zh
 
     -   md: references/protocol-reference/transactions/transaction-types/paymentchannelclaim.ja.md
         targets:
             - ja
 
+
     -   md: references/protocol-reference/transactions/transaction-types/paymentchannelcreate.md
         targets:
             - en
+
+
+    -   md: references/protocol-reference/transactions/transaction-types/paymentchannelcreate.zh.md
+        targets:
+            - zh
 
     -   md: references/protocol-reference/transactions/transaction-types/paymentchannelcreate.ja.md
         targets:
             - ja
 
+
     -   md: references/protocol-reference/transactions/transaction-types/paymentchannelfund.md
         targets:
             - en
+
+
+    -   md: references/protocol-reference/transactions/transaction-types/paymentchannelfund.zh.md
+        targets:
+            - zh
 
     -   md: references/protocol-reference/transactions/transaction-types/paymentchannelfund.ja.md
         targets:
             - ja
 
+
     -   md: references/protocol-reference/transactions/transaction-types/setregularkey.md
         targets:
             - en
+
+
+    -   md: references/protocol-reference/transactions/transaction-types/setregularkey.zh.md
+        targets:
+            - zh
 
     -   md: references/protocol-reference/transactions/transaction-types/setregularkey.ja.md
         targets:
             - ja
 
+
     -   md: references/protocol-reference/transactions/transaction-types/signerlistset.md
         targets:
             - en
+
+
+    -   md: references/protocol-reference/transactions/transaction-types/signerlistset.zh.md
+        targets:
+            - zh
 
     -   md: references/protocol-reference/transactions/transaction-types/signerlistset.ja.md
         targets:
             - ja
 
         # TODO: translate
+
     -   md: references/protocol-reference/transactions/transaction-types/ticketcreate.md
         targets:
             - en
+
+
+    -   md: references/protocol-reference/transactions/transaction-types/ticketcreate.zh.md
+        targets:
+            - zh
             - ja
+
 
     -   md: references/protocol-reference/transactions/transaction-types/trustset.md
         targets:
             - en
 
+
+    -   md: references/protocol-reference/transactions/transaction-types/trustset.zh.md
+        targets:
+            - zh
+
     -   md: references/protocol-reference/transactions/transaction-types/trustset.ja.md
         targets:
             - ja
+
 
     -   md: references/protocol-reference/transactions/pseudo-transaction-types/pseudo-transaction-types.md
         targets:
             - en
 
+
+    -   md: references/protocol-reference/transactions/pseudo-transaction-types/pseudo-transaction-types.zh.md
+        targets:
+            - zh
+
     -   md: references/protocol-reference/transactions/pseudo-transaction-types/pseudo-transaction-types.ja.md
         targets:
             - ja
+
 
     -   md: references/protocol-reference/transactions/pseudo-transaction-types/enableamendment.md
         targets:
             - en
 
+
+    -   md: references/protocol-reference/transactions/pseudo-transaction-types/enableamendment.zh.md
+        targets:
+            - zh
+
     -   md: references/protocol-reference/transactions/pseudo-transaction-types/enableamendment.ja.md
         targets:
             - ja
 
+
     -   md: references/protocol-reference/transactions/pseudo-transaction-types/setfee.md
         targets:
             - en
+
+
+    -   md: references/protocol-reference/transactions/pseudo-transaction-types/setfee.zh.md
+        targets:
+            - zh
 
     -   md: references/protocol-reference/transactions/pseudo-transaction-types/setfee.ja.md
         targets:
             - ja
 
         # TODO: translate
+
     -   md: references/protocol-reference/transactions/pseudo-transaction-types/unlmodify.md
         targets:
             - en
+
+
+    -   md: references/protocol-reference/transactions/pseudo-transaction-types/unlmodify.zh.md
+        targets:
+            - zh
             - ja
+
 
     -   md: references/protocol-reference/transactions/transaction-results/transaction-results.md
         targets:
             - en
 
+
+    -   md: references/protocol-reference/transactions/transaction-results/transaction-results.zh.md
+        targets:
+            - zh
+
     -   md: references/protocol-reference/transactions/transaction-results/transaction-results.ja.md
         targets:
             - ja
+
 
     -   md: references/protocol-reference/transactions/transaction-results/tec-codes.md
         targets:
             - en
 
+
+    -   md: references/protocol-reference/transactions/transaction-results/tec-codes.zh.md
+        targets:
+            - zh
+
     -   md: references/protocol-reference/transactions/transaction-results/tec-codes.ja.md
         targets:
             - ja
+
 
     -   md: references/protocol-reference/transactions/transaction-results/tef-codes.md
         targets:
             - en
 
+
+    -   md: references/protocol-reference/transactions/transaction-results/tef-codes.zh.md
+        targets:
+            - zh
+
     -   md: references/protocol-reference/transactions/transaction-results/tef-codes.ja.md
         targets:
             - ja
+
 
     -   md: references/protocol-reference/transactions/transaction-results/tel-codes.md
         targets:
             - en
 
+
+    -   md: references/protocol-reference/transactions/transaction-results/tel-codes.zh.md
+        targets:
+            - zh
+
     -   md: references/protocol-reference/transactions/transaction-results/tel-codes.ja.md
         targets:
             - ja
+
 
     -   md: references/protocol-reference/transactions/transaction-results/tem-codes.md
         targets:
             - en
 
+
+    -   md: references/protocol-reference/transactions/transaction-results/tem-codes.zh.md
+        targets:
+            - zh
+
     -   md: references/protocol-reference/transactions/transaction-results/tem-codes.ja.md
         targets:
             - ja
+
 
     -   md: references/protocol-reference/transactions/transaction-results/ter-codes.md
         targets:
             - en
 
+
+    -   md: references/protocol-reference/transactions/transaction-results/ter-codes.zh.md
+        targets:
+            - zh
+
     -   md: references/protocol-reference/transactions/transaction-results/ter-codes.ja.md
         targets:
             - ja
+
 
     -   md: references/protocol-reference/transactions/transaction-results/tes-success.md
         targets:
             - en
 
+
+    -   md: references/protocol-reference/transactions/transaction-results/tes-success.zh.md
+        targets:
+            - zh
+
     -   md: references/protocol-reference/transactions/transaction-results/tes-success.ja.md
         targets:
             - ja
+
 
     -   md: references/protocol-reference/transactions/transaction-metadata.md
         targets:
             - en
 
+
+    -   md: references/protocol-reference/transactions/transaction-metadata.zh.md
+        targets:
+            - zh
+
     -   md: references/protocol-reference/transactions/transaction-metadata.ja.md
         targets:
             - ja
+
 
     -   md: references/protocol-reference/modifying-the-ledger.md
         targets:
             - en
 
+
+    -   md: references/protocol-reference/modifying-the-ledger.zh.md
+        targets:
+            - zh
+
     -   md: references/protocol-reference/modifying-the-ledger.ja.md
         targets:
             - ja
 
+
     -   md: references/protocol-reference/serialization.md
         targets:
             - en
+
+
+    -   md: references/protocol-reference/serialization.zh.md
+        targets:
+            - zh
 
     -   md: references/protocol-reference/serialization.ja.md
         targets:
@@ -2288,6 +2665,7 @@ pages:
         targets:
             - en
             - ja
+            - zh
 
     -   name: Python Client Library
         html: https://xrpl-py.readthedocs.io/
@@ -2316,6 +2694,14 @@ pages:
         targets:
             - en
 
+    -   name: HTTP / WebSocket APIs
+        html: rippled-api.html
+        parent: references.html
+        template: template-landing-children.html
+        blurb: Communicate directly with rippled, the core peer-to-peer server that manages the XRP Ledger.
+        targets:
+            - zh
+
     -   name: HTTP / WebSocket API リファレンス
         html: rippled-api.html
         parent: references.html
@@ -2324,55 +2710,91 @@ pages:
         targets:
             - ja
 
+
     -   md: references/rippled-api/api-conventions/api-conventions.md
         targets:
             - en
+
+    -   md: references/rippled-api/api-conventions/api-conventions.zh.md
+        targets:
+            - zh
 
     -   md: references/rippled-api/api-conventions/api-conventions.ja.md
         targets:
             - ja
 
+
+
     -   md: references/rippled-api/api-conventions/request-formatting.md
         targets:
             - en
+
+    -   md: references/rippled-api/api-conventions/request-formatting.zh.md
+        targets:
+            - zh
 
     -   md: references/rippled-api/api-conventions/request-formatting.ja.md
         targets:
             - ja
 
+
     -   md: references/rippled-api/api-conventions/response-formatting.md
         targets:
             - en
+
+    -   md: references/rippled-api/api-conventions/response-formatting.zh.md
+        targets:
+            - zh
 
     -   md: references/rippled-api/api-conventions/response-formatting.ja.md
         targets:
             - ja
 
+
     -   md: references/rippled-api/api-conventions/error-formatting.md
         targets:
             - en
+
+    -   md: references/rippled-api/api-conventions/error-formatting.zh.md
+        targets:
+            - zh
 
     -   md: references/rippled-api/api-conventions/error-formatting.ja.md
         targets:
             - ja
 
+
     -   md: references/rippled-api/api-conventions/markers-and-pagination.md
         targets:
             - en
+
+    -   md: references/rippled-api/api-conventions/markers-and-pagination.zh.md
+        targets:
+            - zh
 
     -   md: references/rippled-api/api-conventions/markers-and-pagination.ja.md
         targets:
             - ja
 
     # TODO: translate page & blurb
+
     -   md: references/rippled-api/api-conventions/rate-limiting.md
         targets:
             - en
+
+    -   md: references/rippled-api/api-conventions/rate-limiting.zh.md
+        targets:
+            - zh
             - ja
+
 
     -   md: references/rippled-api/api-conventions/rippled-server-states.md
         targets:
             - en
+
+    -   md: references/rippled-api/api-conventions/rippled-server-states.zh.md
+        targets:
+            - zh
 
     -   md: references/rippled-api/api-conventions/rippled-server-states.ja.md
         targets:
@@ -2380,9 +2802,14 @@ pages:
 
 # rippled Public Methods
 
+
     -   md: references/rippled-api/public-rippled-methods/public-rippled-methods.md
         targets:
             - en
+
+    -   md: references/rippled-api/public-rippled-methods/public-rippled-methods.zh.md
+        targets:
+            - zh
 
     -   md: references/rippled-api/public-rippled-methods/public-rippled-methods.ja.md
         targets:
@@ -2400,77 +2827,130 @@ pages:
         html: account-methods.html
         parent: public-rippled-methods.html
         template: template-landing-children.html
+        blurb: XRP分类账中的账户代表XRP持有人和交易发送者。使用这些方法处理帐户信息。
+        targets:
+            - zh
+
+    -   name: Account Methods
+        html: account-methods.html
+        parent: public-rippled-methods.html
+        template: template-landing-children.html
         blurb: XRP Ledgerのアカウントとは、XRPの保有者とトランザクションの送信者を意味します。以下のメソッドを使用して、アカウント情報を処理します。
         targets:
             - ja
+
 
     -   md: references/rippled-api/public-rippled-methods/account-methods/account_channels.md
         targets:
             - en
 
+    -   md: references/rippled-api/public-rippled-methods/account-methods/account_channels.zh.md
+        targets:
+            - zh
+
     -   md: references/rippled-api/public-rippled-methods/account-methods/account_channels.ja.md
         targets:
             - ja
+
 
     -   md: references/rippled-api/public-rippled-methods/account-methods/account_currencies.md
         targets:
             - en
 
+    -   md: references/rippled-api/public-rippled-methods/account-methods/account_currencies.zh.md
+        targets:
+            - zh
+
     -   md: references/rippled-api/public-rippled-methods/account-methods/account_currencies.ja.md
         targets:
             - ja
+
 
     -   md: references/rippled-api/public-rippled-methods/account-methods/account_info.md
         targets:
             - en
 
+    -   md: references/rippled-api/public-rippled-methods/account-methods/account_info.zh.md
+        targets:
+            - zh
+
     -   md: references/rippled-api/public-rippled-methods/account-methods/account_info.ja.md
         targets:
             - ja
+
 
     -   md: references/rippled-api/public-rippled-methods/account-methods/account_lines.md
         targets:
             - en
 
+    -   md: references/rippled-api/public-rippled-methods/account-methods/account_lines.zh.md
+        targets:
+            - zh
+
     -   md: references/rippled-api/public-rippled-methods/account-methods/account_lines.ja.md
         targets:
             - ja
+
 
     -   md: references/rippled-api/public-rippled-methods/account-methods/account_objects.md
         targets:
             - en
 
+    -   md: references/rippled-api/public-rippled-methods/account-methods/account_objects.zh.md
+        targets:
+            - zh
+
     -   md: references/rippled-api/public-rippled-methods/account-methods/account_objects.ja.md
         targets:
             - ja
+
 
     -   md: references/rippled-api/public-rippled-methods/account-methods/account_offers.md
         targets:
             - en
 
+    -   md: references/rippled-api/public-rippled-methods/account-methods/account_offers.zh.md
+        targets:
+            - zh
+
     -   md: references/rippled-api/public-rippled-methods/account-methods/account_offers.ja.md
         targets:
             - ja
+
 
     -   md: references/rippled-api/public-rippled-methods/account-methods/account_tx.md
         targets:
             - en
 
+    -   md: references/rippled-api/public-rippled-methods/account-methods/account_tx.zh.md
+        targets:
+            - zh
+
     -   md: references/rippled-api/public-rippled-methods/account-methods/account_tx.ja.md
         targets:
             - ja
+
 
     -   md: references/rippled-api/public-rippled-methods/account-methods/gateway_balances.md
         targets:
             - en
 
+    -   md: references/rippled-api/public-rippled-methods/account-methods/gateway_balances.zh.md
+        targets:
+            - zh
+
     -   md: references/rippled-api/public-rippled-methods/account-methods/gateway_balances.ja.md
         targets:
             - ja
 
+
     -   md: references/rippled-api/public-rippled-methods/account-methods/noripple_check.md
         targets:
             - en
+
+    -   md: references/rippled-api/public-rippled-methods/account-methods/noripple_check.zh.md
+        targets:
+            - zh
 
     -   md: references/rippled-api/public-rippled-methods/account-methods/noripple_check.ja.md
         targets:
@@ -2487,46 +2967,79 @@ pages:
     -   name: Ledger Methods
         html: ledger-methods.html
         parent: public-rippled-methods.html
+        blurb: 分类帐版本包含一个标题、一个事务树和一个状态树，其中包含帐户设置、信任关系、余额、事务和其他数据。使用这些方法检索分类帐信息。
+        template: template-landing-children.html
+        targets:
+            - zh
+
+    -   name: Ledger Methods
+        html: ledger-methods.html
+        parent: public-rippled-methods.html
         blurb: レジャーバージョンには、ヘッダー、トランザクションツリー、状態ツリーが含まれ、さらにその中にアカウント設定、トラストライン、残高、トランザクション、その他のデータが含まれます。以下のメソッドを使用して、レジャー情報を取得します。
         template: template-landing-children.html
         targets:
             - ja
 
+
     -   md: references/rippled-api/public-rippled-methods/ledger-methods/ledger.md
         targets:
             - en
+
+    -   md: references/rippled-api/public-rippled-methods/ledger-methods/ledger.zh.md
+        targets:
+            - zh
 
     -   md: references/rippled-api/public-rippled-methods/ledger-methods/ledger.ja.md
         targets:
             - ja
 
+
     -   md: references/rippled-api/public-rippled-methods/ledger-methods/ledger_closed.md
         targets:
             - en
+
+    -   md: references/rippled-api/public-rippled-methods/ledger-methods/ledger_closed.zh.md
+        targets:
+            - zh
 
     -   md: references/rippled-api/public-rippled-methods/ledger-methods/ledger_closed.ja.md
         targets:
             - ja
 
+
     -   md: references/rippled-api/public-rippled-methods/ledger-methods/ledger_current.md
         targets:
             - en
+
+    -   md: references/rippled-api/public-rippled-methods/ledger-methods/ledger_current.zh.md
+        targets:
+            - zh
 
     -   md: references/rippled-api/public-rippled-methods/ledger-methods/ledger_current.ja.md
         targets:
             - ja
 
+
     -   md: references/rippled-api/public-rippled-methods/ledger-methods/ledger_data.md
         targets:
             - en
+
+    -   md: references/rippled-api/public-rippled-methods/ledger-methods/ledger_data.zh.md
+        targets:
+            - zh
 
     -   md: references/rippled-api/public-rippled-methods/ledger-methods/ledger_data.ja.md
         targets:
             - ja
 
+
     -   md: references/rippled-api/public-rippled-methods/ledger-methods/ledger_entry.md
         targets:
             - en
+
+    -   md: references/rippled-api/public-rippled-methods/ledger-methods/ledger_entry.zh.md
+        targets:
+            - zh
 
         # TODO: update the translation of this page
     -   md: references/rippled-api/public-rippled-methods/ledger-methods/ledger_entry.ja.md
@@ -2545,61 +3058,104 @@ pages:
         html: transaction-methods.html # watch for clashes w/ this filename
         parent: public-rippled-methods.html
         template: template-landing-children.html
+        blurb: 事务是唯一可以修改XRP分类帐的共享状态的东西。XRP分类账上的所有业务都采用交易的形式。使用这些方法处理事务。 #TODO:translate
+        targets:
+            - zh
+
+    -   name: Transaction Methods
+        html: transaction-methods.html # watch for clashes w/ this filename
+        parent: public-rippled-methods.html
+        template: template-landing-children.html
         blurb: トランザクションだけが、XRP Ledgerの共有されている状態を変更できます。XRP Ledgerに対するすべてのビジネスはトランザクションの形態をとります。以下のメソッドを使用して、トランザクションを処理します。
         targets:
             - ja
+
 
     -   md: references/rippled-api/public-rippled-methods/transaction-methods/sign.md
         targets:
             - en
 
+    -   md: references/rippled-api/public-rippled-methods/transaction-methods/sign.zh.md
+        targets:
+            - zh
+
     -   md: references/rippled-api/public-rippled-methods/transaction-methods/sign.ja.md
         targets:
             - ja
+
 
     -   md: references/rippled-api/public-rippled-methods/transaction-methods/sign_for.md
         targets:
             - en
 
+    -   md: references/rippled-api/public-rippled-methods/transaction-methods/sign_for.zh.md
+        targets:
+            - zh
+
     -   md: references/rippled-api/public-rippled-methods/transaction-methods/sign_for.ja.md
         targets:
             - ja
+
 
     -   md: references/rippled-api/public-rippled-methods/transaction-methods/submit.md
         targets:
             - en
 
+    -   md: references/rippled-api/public-rippled-methods/transaction-methods/submit.zh.md
+        targets:
+            - zh
+
     -   md: references/rippled-api/public-rippled-methods/transaction-methods/submit.ja.md
         targets:
             - ja
+
 
     -   md: references/rippled-api/public-rippled-methods/transaction-methods/submit_multisigned.md
         targets:
             - en
 
+    -   md: references/rippled-api/public-rippled-methods/transaction-methods/submit_multisigned.zh.md
+        targets:
+            - zh
+
     -   md: references/rippled-api/public-rippled-methods/transaction-methods/submit_multisigned.ja.md
         targets:
             - ja
+
 
     -   md: references/rippled-api/public-rippled-methods/transaction-methods/transaction_entry.md
         targets:
             - en
 
+    -   md: references/rippled-api/public-rippled-methods/transaction-methods/transaction_entry.zh.md
+        targets:
+            - zh
+
     -   md: references/rippled-api/public-rippled-methods/transaction-methods/transaction_entry.ja.md
         targets:
             - ja
+
 
     -   md: references/rippled-api/public-rippled-methods/transaction-methods/tx.md
         targets:
             - en
 
+    -   md: references/rippled-api/public-rippled-methods/transaction-methods/tx.zh.md
+        targets:
+            - zh
+
     -   md: references/rippled-api/public-rippled-methods/transaction-methods/tx.ja.md
         targets:
             - ja
 
+
     -   md: references/rippled-api/public-rippled-methods/transaction-methods/tx_history.md
         targets:
             - en
+
+    -   md: references/rippled-api/public-rippled-methods/transaction-methods/tx_history.zh.md
+        targets:
+            - zh
 
     -   md: references/rippled-api/public-rippled-methods/transaction-methods/tx_history.ja.md
         targets:
@@ -2616,38 +3172,66 @@ pages:
     -   name: Path and Order Book Methods
         html: path-and-order-book-methods.html
         parent: public-rippled-methods.html
+        blurb: 路径定义了付款在从发送方到接收方的过程中通过中间步骤的方式。路径通过订单簿连接发送方和接收方，实现跨货币支付。使用这些方法处理路径和其他书籍。
+        template: template-landing-children.html
+        targets:
+            - en
+
+    -   name: Path and Order Book Methods
+        html: path-and-order-book-methods.html
+        parent: public-rippled-methods.html
         blurb: パスは、支払いが送信者から受信者に届くまでに中間ステップでたどる道筋を定義します。パスは、送信者と受信者をオーダーブックを介してつなぐことで、複数通貨間の支払いを可能にします。パスと他のオーダーブックに関しては、以下のメソッドを使用します。
         template: template-landing-children.html
         targets:
             - ja
 
+
     -   md: references/rippled-api/public-rippled-methods/path-and-order-book-methods/book_offers.md
         targets:
             - en
+
+    -   md: references/rippled-api/public-rippled-methods/path-and-order-book-methods/book_offers.zh.md
+        targets:
+            - zh
 
     -   md: references/rippled-api/public-rippled-methods/path-and-order-book-methods/book_offers.ja.md
         targets:
             - ja
 
+
     -   md: references/rippled-api/public-rippled-methods/path-and-order-book-methods/deposit_authorized.md
         targets:
             - en
+
+    -   md: references/rippled-api/public-rippled-methods/path-and-order-book-methods/deposit_authorized.zh.md
+        targets:
+            - zh
 
     -   md: references/rippled-api/public-rippled-methods/path-and-order-book-methods/deposit_authorized.ja.md
         targets:
             - ja
 
+
     -   md: references/rippled-api/public-rippled-methods/path-and-order-book-methods/path_find.md
         targets:
             - en
+
+    -   md: references/rippled-api/public-rippled-methods/path-and-order-book-methods/path_find.zh.md
+        targets:
+            - zh
 
     -   md: references/rippled-api/public-rippled-methods/path-and-order-book-methods/path_find.ja.md
         targets:
             - ja
 
+
     -   md: references/rippled-api/public-rippled-methods/path-and-order-book-methods/ripple_path_find.md
         targets:
             - en
+
+    -   md: references/rippled-api/public-rippled-methods/path-and-order-book-methods/ripple_path_find.zh.md
+        targets:
+            - zh
 
     -   md: references/rippled-api/public-rippled-methods/path-and-order-book-methods/ripple_path_find.ja.md
         targets:
@@ -2656,23 +3240,33 @@ pages:
     -   name: Payment Channel Methods
         html: payment-channel-methods.html
         parent: public-rippled-methods.html
-        blurb: Payment channels are a tool for facilitating repeated, unidirectional payments, or temporary credit between two parties. Use these methods to work with payment channels. #TODO:translate
+        blurb: 支付渠道是一种促进双方重复、单向支付或临时信贷的工具。使用这些方法处理支付渠道。 #TODO:translate
         template: template-landing-children.html
         targets:
             - en
             - ja
 
+
     -   md: references/rippled-api/public-rippled-methods/payment-channel-methods/channel_authorize.md
         targets:
             - en
+
+    -   md: references/rippled-api/public-rippled-methods/payment-channel-methods/channel_authorize.zh.md
+        targets:
+            - zh
 
     -   md: references/rippled-api/public-rippled-methods/payment-channel-methods/channel_authorize.ja.md
         targets:
             - ja
 
+
     -   md: references/rippled-api/public-rippled-methods/payment-channel-methods/channel_verify.md
         targets:
             - en
+
+    -   md: references/rippled-api/public-rippled-methods/payment-channel-methods/channel_verify.zh.md
+        targets:
+            - zh
 
     -   md: references/rippled-api/public-rippled-methods/payment-channel-methods/channel_verify.ja.md
         targets:
@@ -2689,22 +3283,40 @@ pages:
     -   name: Subscription Methods
         html: subscription-methods.html
         parent: public-rippled-methods.html
+        blurb: 使用这些方法使服务器能够在各种事件发生时将更新推送到您的客户端，这样您就可以立即知道并做出反应。仅WebSocket API。 #TODO:translate
+        template: template-landing-children.html
+        targets:
+            - zh
+
+    -   name: Subscription Methods
+        html: subscription-methods.html
+        parent: public-rippled-methods.html
         blurb: 以下のメソッドにより、各種イベントの発生時にサーバーからクライアントに更新が通知されるように設定できます。これにより、イベントを即座に把握し、対処することができます。WebSocket APIのみ。
         template: template-landing-children.html
         targets:
             - ja
 
+
     -   md: references/rippled-api/public-rippled-methods/subscription-methods/subscribe.md
         targets:
             - en
+
+    -   md: references/rippled-api/public-rippled-methods/subscription-methods/subscribe.zh.md
+        targets:
+            - zh
 
     -   md: references/rippled-api/public-rippled-methods/subscription-methods/subscribe.ja.md
         targets:
             - ja
 
+
     -   md: references/rippled-api/public-rippled-methods/subscription-methods/unsubscribe.md
         targets:
             - en
+
+    -   md: references/rippled-api/public-rippled-methods/subscription-methods/unsubscribe.zh.md
+        targets:
+            - zh
 
     -   md: references/rippled-api/public-rippled-methods/subscription-methods/unsubscribe.ja.md
         targets:
@@ -2721,36 +3333,64 @@ pages:
     -   name: Server Info Methods
         html: server-info-methods.html
         parent: public-rippled-methods.html
+        blurb: 使用这些方法来检索有关涟漪服务器的当前状态的信息。
+        template: template-landing-children.html
+        targets:
+            - zh
+
+    -   name: Server Info Methods
+        html: server-info-methods.html
+        parent: public-rippled-methods.html
         blurb: 以下のメソッドを使用して、rippledサーバーの現在の状態についての情報を取得します。
         template: template-landing-children.html
         targets:
             - ja
 
+
     -   md: references/rippled-api/public-rippled-methods/server-info-methods/fee.md
         targets:
             - en
+
+    -   md: references/rippled-api/public-rippled-methods/server-info-methods/fee.zh.md
+        targets:
+            - zh
 
     -   md: references/rippled-api/public-rippled-methods/server-info-methods/fee.ja.md
         targets:
             - ja
 
         # TODO: translate
+
     -   md: references/rippled-api/public-rippled-methods/server-info-methods/manifest.md
         targets:
             - en
+
+    -   md: references/rippled-api/public-rippled-methods/server-info-methods/manifest.zh.md
+        targets:
+            - zh
             - ja
+
 
     -   md: references/rippled-api/public-rippled-methods/server-info-methods/server_info.md
         targets:
             - en
 
+    -   md: references/rippled-api/public-rippled-methods/server-info-methods/server_info.zh.md
+        targets:
+            - zh
+
     -   md: references/rippled-api/public-rippled-methods/server-info-methods/server_info.ja.md
         targets:
             - ja
 
+
     -   md: references/rippled-api/public-rippled-methods/server-info-methods/server_state.md
         targets:
             - en
+
+    -   md: references/rippled-api/public-rippled-methods/server-info-methods/server_state.zh.md
+        targets:
+            - zh
 
     -   md: references/rippled-api/public-rippled-methods/server-info-methods/server_state.ja.md
         targets:
@@ -2765,33 +3405,61 @@ pages:
             - en
             - ja
 
+    -   name: Utility Methods
+        html: utility-methods.html
+        parent: public-rippled-methods.html
+        blurb: 使用这些方法执行方便的任务，例如ping和随机数生成。
+        template: template-landing-children.html
+        targets:
+            - zh
+
+
     -   md: references/rippled-api/public-rippled-methods/utility-methods/json.md
         targets:
             - en
+
+    -   md: references/rippled-api/public-rippled-methods/utility-methods/json.zh.md
+        targets:
+            - zh
 
     -   md: references/rippled-api/public-rippled-methods/utility-methods/json.ja.md
         targets:
             - ja
 
+
     -   md: references/rippled-api/public-rippled-methods/utility-methods/ping.md
         targets:
             - en
+
+    -   md: references/rippled-api/public-rippled-methods/utility-methods/ping.zh.md
+        targets:
+            - zh
 
     -   md: references/rippled-api/public-rippled-methods/utility-methods/ping.ja.md
         targets:
             - ja
 
+
     -   md: references/rippled-api/public-rippled-methods/utility-methods/random.md
         targets:
             - en
+
+    -   md: references/rippled-api/public-rippled-methods/utility-methods/random.zh.md
+        targets:
+            - zh
 
     -   md: references/rippled-api/public-rippled-methods/utility-methods/random.ja.md
         targets:
             - ja
 
+
     -   md: references/rippled-api/admin-rippled-methods/admin-rippled-methods.md
         targets:
             - en
+
+    -   md: references/rippled-api/admin-rippled-methods/admin-rippled-methods.zh.md
+        targets:
+            - zh
 
     -   md: references/rippled-api/admin-rippled-methods/admin-rippled-methods.ja.md
         targets:
@@ -2813,17 +3481,27 @@ pages:
         targets:
             - ja
 
+
     -   md: references/rippled-api/admin-rippled-methods/key-generation-methods/validation_create.md
         targets:
             - en
+
+    -   md: references/rippled-api/admin-rippled-methods/key-generation-methods/validation_create.zh.md
+        targets:
+            - zh
 
     -   md: references/rippled-api/admin-rippled-methods/key-generation-methods/validation_create.ja.md
         targets:
             - ja
 
+
     -   md: references/rippled-api/admin-rippled-methods/key-generation-methods/wallet_propose.md
         targets:
             - en
+
+    -   md: references/rippled-api/admin-rippled-methods/key-generation-methods/wallet_propose.zh.md
+        targets:
+            - zh
 
     -   md: references/rippled-api/admin-rippled-methods/key-generation-methods/wallet_propose.ja.md
         targets:
@@ -2845,57 +3523,92 @@ pages:
         targets:
             - ja
 
+
     -   md: references/rippled-api/admin-rippled-methods/logging-and-data-management-methods/can_delete.md
         targets:
             - en
+
+    -   md: references/rippled-api/admin-rippled-methods/logging-and-data-management-methods/can_delete.zh.md
+        targets:
+            - zh
 
     -   md: references/rippled-api/admin-rippled-methods/logging-and-data-management-methods/can_delete.ja.md
         targets:
             - ja
 
+
     -   md: references/rippled-api/admin-rippled-methods/logging-and-data-management-methods/crawl_shards.md
         targets:
             - en
+
+    -   md: references/rippled-api/admin-rippled-methods/logging-and-data-management-methods/crawl_shards.zh.md
+        targets:
+            - zh
 
     -   md: references/rippled-api/admin-rippled-methods/logging-and-data-management-methods/crawl_shards.ja.md
         targets:
             - ja
 
+
     -   md: references/rippled-api/admin-rippled-methods/logging-and-data-management-methods/download_shard.md
         targets:
             - en
+
+    -   md: references/rippled-api/admin-rippled-methods/logging-and-data-management-methods/download_shard.zh.md
+        targets:
+            - zh
 
     -   md: references/rippled-api/admin-rippled-methods/logging-and-data-management-methods/download_shard.ja.md
         targets:
             - ja
 
+
     -   md: references/rippled-api/admin-rippled-methods/logging-and-data-management-methods/ledger_cleaner.md
         targets:
             - en
+
+    -   md: references/rippled-api/admin-rippled-methods/logging-and-data-management-methods/ledger_cleaner.zh.md
+        targets:
+            - zh
 
     -   md: references/rippled-api/admin-rippled-methods/logging-and-data-management-methods/ledger_cleaner.ja.md
         targets:
             - ja
 
+
     -   md: references/rippled-api/admin-rippled-methods/logging-and-data-management-methods/ledger_request.md
         targets:
             - en
+
+    -   md: references/rippled-api/admin-rippled-methods/logging-and-data-management-methods/ledger_request.zh.md
+        targets:
+            - zh
 
     -   md: references/rippled-api/admin-rippled-methods/logging-and-data-management-methods/ledger_request.ja.md
         targets:
             - ja
 
+
     -   md: references/rippled-api/admin-rippled-methods/logging-and-data-management-methods/log_level.md
         targets:
             - en
+
+    -   md: references/rippled-api/admin-rippled-methods/logging-and-data-management-methods/log_level.zh.md
+        targets:
+            - zh
 
     -   md: references/rippled-api/admin-rippled-methods/logging-and-data-management-methods/log_level.ja.md
         targets:
             - ja
 
+
     -   md: references/rippled-api/admin-rippled-methods/logging-and-data-management-methods/logrotate.md
         targets:
             - en
+
+    -   md: references/rippled-api/admin-rippled-methods/logging-and-data-management-methods/logrotate.zh.md
+        targets:
+            - zh
 
     -   md: references/rippled-api/admin-rippled-methods/logging-and-data-management-methods/logrotate.ja.md
         targets:
@@ -2911,25 +3624,40 @@ pages:
             - en
             - ja
 
+
     -   md: references/rippled-api/admin-rippled-methods/server-control-methods/ledger_accept.md
         targets:
             - en
+
+    -   md: references/rippled-api/admin-rippled-methods/server-control-methods/ledger_accept.zh.md
+        targets:
+            - zh
 
     -   md: references/rippled-api/admin-rippled-methods/server-control-methods/ledger_accept.ja.md
         targets:
             - ja
 
+
     -   md: references/rippled-api/admin-rippled-methods/server-control-methods/stop.md
         targets:
             - en
+
+    -   md: references/rippled-api/admin-rippled-methods/server-control-methods/stop.zh.md
+        targets:
+            - zh
 
     -   md: references/rippled-api/admin-rippled-methods/server-control-methods/stop.ja.md
         targets:
             - ja
 
+
     -   md: references/rippled-api/admin-rippled-methods/server-control-methods/validation_seed.md
         targets:
             - en
+
+    -   md: references/rippled-api/admin-rippled-methods/server-control-methods/validation_seed.zh.md
+        targets:
+            - zh
 
     -   md: references/rippled-api/admin-rippled-methods/server-control-methods/validation_seed.ja.md
         targets:
@@ -2952,41 +3680,66 @@ pages:
         targets:
             - ja
 
+
     -   md: references/rippled-api/admin-rippled-methods/peer-management-methods/connect.md
         targets:
             - en
+
+    -   md: references/rippled-api/admin-rippled-methods/peer-management-methods/connect.zh.md
+        targets:
+            - zh
 
     -   md: references/rippled-api/admin-rippled-methods/peer-management-methods/connect.ja.md
         targets:
             - ja
 
+
     -   md: references/rippled-api/admin-rippled-methods/peer-management-methods/peer_reservations_add.md
         targets:
             - en
+
+    -   md: references/rippled-api/admin-rippled-methods/peer-management-methods/peer_reservations_add.zh.md
+        targets:
+            - zh
 
     -   md: references/rippled-api/admin-rippled-methods/peer-management-methods/peer_reservations_add.ja.md
         targets:
             - ja
 
+
     -   md: references/rippled-api/admin-rippled-methods/peer-management-methods/peer_reservations_del.md
         targets:
             - en
+
+    -   md: references/rippled-api/admin-rippled-methods/peer-management-methods/peer_reservations_del.zh.md
+        targets:
+            - zh
 
     -   md: references/rippled-api/admin-rippled-methods/peer-management-methods/peer_reservations_del.ja.md
         targets:
             - ja
 
+
     -   md: references/rippled-api/admin-rippled-methods/peer-management-methods/peer_reservations_list.md
         targets:
             - en
+
+    -   md: references/rippled-api/admin-rippled-methods/peer-management-methods/peer_reservations_list.zh.md
+        targets:
+            - zh
 
     -   md: references/rippled-api/admin-rippled-methods/peer-management-methods/peer_reservations_list.ja.md
         targets:
             - ja
 
+
     -   md: references/rippled-api/admin-rippled-methods/peer-management-methods/peers.md
         targets:
             - en
+
+    -   md: references/rippled-api/admin-rippled-methods/peer-management-methods/peers.zh.md
+        targets:
+            - zh
 
     -   md: references/rippled-api/admin-rippled-methods/peer-management-methods/peers.ja.md
         targets:
@@ -3008,71 +3761,116 @@ pages:
         targets:
             - ja
 
+
     -   md: references/rippled-api/admin-rippled-methods/status-and-debugging-methods/consensus_info.md
         targets:
             - en
+
+    -   md: references/rippled-api/admin-rippled-methods/status-and-debugging-methods/consensus_info.zh.md
+        targets:
+            - zh
 
     -   md: references/rippled-api/admin-rippled-methods/status-and-debugging-methods/consensus_info.ja.md
         targets:
             - ja
 
+
     -   md: references/rippled-api/admin-rippled-methods/status-and-debugging-methods/feature.md
         targets:
             - en
+
+    -   md: references/rippled-api/admin-rippled-methods/status-and-debugging-methods/feature.zh.md
+        targets:
+            - zh
 
     -   md: references/rippled-api/admin-rippled-methods/status-and-debugging-methods/feature.ja.md
         targets:
             - ja
 
+
     -   md: references/rippled-api/admin-rippled-methods/status-and-debugging-methods/fetch_info.md
         targets:
             - en
+
+    -   md: references/rippled-api/admin-rippled-methods/status-and-debugging-methods/fetch_info.zh.md
+        targets:
+            - zh
 
     -   md: references/rippled-api/admin-rippled-methods/status-and-debugging-methods/fetch_info.ja.md
         targets:
             - ja
 
+
     -   md: references/rippled-api/admin-rippled-methods/status-and-debugging-methods/get_counts.md
         targets:
             - en
+
+    -   md: references/rippled-api/admin-rippled-methods/status-and-debugging-methods/get_counts.zh.md
+        targets:
+            - zh
 
     -   md: references/rippled-api/admin-rippled-methods/status-and-debugging-methods/get_counts.ja.md
         targets:
             - ja
 
+
     -   md: references/rippled-api/admin-rippled-methods/status-and-debugging-methods/print.md
         targets:
             - en
+
+    -   md: references/rippled-api/admin-rippled-methods/status-and-debugging-methods/print.zh.md
+        targets:
+            - zh
 
     -   md: references/rippled-api/admin-rippled-methods/status-and-debugging-methods/print.ja.md
         targets:
             - ja
 
         # TODO: translate
+
     -   md: references/rippled-api/admin-rippled-methods/status-and-debugging-methods/validator_info.md
         targets:
             - en
+
+    -   md: references/rippled-api/admin-rippled-methods/status-and-debugging-methods/validator_info.zh.md
+        targets:
+            - zh
             - ja
+
 
     -   md: references/rippled-api/admin-rippled-methods/status-and-debugging-methods/validator_list_sites.md
         targets:
             - en
 
+    -   md: references/rippled-api/admin-rippled-methods/status-and-debugging-methods/validator_list_sites.zh.md
+        targets:
+            - zh
+
     -   md: references/rippled-api/admin-rippled-methods/status-and-debugging-methods/validator_list_sites.ja.md
         targets:
             - ja
+
 
     -   md: references/rippled-api/admin-rippled-methods/status-and-debugging-methods/validators.md
         targets:
             - en
 
+    -   md: references/rippled-api/admin-rippled-methods/status-and-debugging-methods/validators.zh.md
+        targets:
+            - zh
+
     -   md: references/rippled-api/admin-rippled-methods/status-and-debugging-methods/validators.ja.md
         targets:
             - ja
 
+
     -   md: references/rippled-api/commandline-usage.md
         targets:
             - en
+
+    -   md: references/rippled-api/commandline-usage.zh.md
+        targets:
+            - zh
 
     -   md: references/rippled-api/commandline-usage.ja.md
         targets:
@@ -3087,16 +3885,26 @@ pages:
         targets:
             - en
             - ja
+            - zh
 
     # TODO: translate page & blurb
+
     -   md: references/rippled-api/peer-port-methods/health-check.md
         targets:
             - en
-            - ja
+
+    -   md: references/rippled-api/peer-port-methods/health-check.zh.md
+        targets:
+            - zh
+
 
     -   md: references/rippled-api/peer-port-methods/peer-crawler.md
         targets:
             - en
+
+    -   md: references/rippled-api/peer-port-methods/peer-crawler.zh.md
+        targets:
+            - zh
 
     # TODO: translate page (currently only the blurb is translated)
     -   md: references/rippled-api/peer-port-methods/peer-crawler.md
@@ -3106,9 +3914,14 @@ pages:
             - ja
 
     # TODO: translate page & blurb
+
     -   md: references/rippled-api/peer-port-methods/validator-list.md
         targets:
             - en
+
+    -   md: references/rippled-api/peer-port-methods/validator-list.zh.md
+        targets:
+            - zh
             - ja
 
         # Placeholder / redirect for XRP-API docs.
@@ -3227,6 +4040,14 @@ pages:
         blurb: Use these web-based tools to interact with the ledger and test your software.
         targets:
             - en
+
+    -   md: dev-tools/dev-tools.zh.md
+        html: dev-tools.html
+        parent: docs.html
+        top_nav_level: 1
+        blurb: Use these web-based tools to interact with the ledger and test your software.
+        targets:
+            - zh
 
     -   md: dev-tools/dev-tools.ja.md
         html: dev-tools.html
