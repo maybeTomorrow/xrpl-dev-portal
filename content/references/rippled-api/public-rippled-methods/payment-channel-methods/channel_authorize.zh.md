@@ -122,7 +122,7 @@ The request **must** specify exactly one of `secret`, `seed`, `seed_hex`, or `pa
 
 ## Possible Errors
 
-* Any of the [universal error types][].
+* 任何[通用错误类型][]。
 * `badKeyType` - 请求中的`key_type`参数不是有效的密钥类型。(有效类型为 `secp256k1` 或 `ed25519`.) [New in: rippled 1.4.0][]
 * `badSeed` - 请求中的`secret`不是有效的密钥。
 * `channelAmtMalformed` - 请求中的`amount`不是有效的[HWA amount][HWA，在drops]中。

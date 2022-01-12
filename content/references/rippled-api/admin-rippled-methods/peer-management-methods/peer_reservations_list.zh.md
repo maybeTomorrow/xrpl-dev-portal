@@ -131,7 +131,7 @@ Each member of the `reservations` array is a JSON object describing one [peer re
 
 ### Possible Errors
 
-- Any of the [universal error types][].
+- 任何[通用错误类型][]。
 - `reportingUnsupported` - ([Reporting Mode][] servers only) This method is not available in Reporting Mode.
 
 <!--{# common link defs #}-->

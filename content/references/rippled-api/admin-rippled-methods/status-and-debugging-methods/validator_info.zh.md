@@ -119,7 +119,7 @@ For more information on validator tokens and key rotation, see the [validator-ke
 
 ### Possible Errors
 
-- Any of the [universal error types][].
+- 任何[通用错误类型][]。
 - `invalidParams` - The server returns this error with `"error_message" : "not a validator"` if the server is not [configured as a validator](run-rippled-as-a-validator.html).
 
 <!--{# common link defs #}-->

@@ -83,7 +83,7 @@ The response follows the [standard format][], with a successful result containin
 
 ## Possible Errors
 
-* Any of the [universal error types][].
+* 任何[通用错误类型][]。
 * `invalidParams` - 一个或多个字段指定不正确，或者缺少一个或多个必需字段。
 * `noPermission` - The request included the `url` field, but you are not connected as an admin.
 * `malformedStream` - The `streams` field of the request is not formatted properly.

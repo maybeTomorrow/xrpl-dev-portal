@@ -52,12 +52,12 @@ rippled tx C53ECF838647FA5A4C780377025FEC7999AB4182590510CA461444B207AB74A9 fals
 
 | `Field`       | Type    | Description                                        |
 |:--------------|:--------|:---------------------------------------------------|
-| `transaction` | String  | The 256-bit hash of the transaction, as hex.       |
-| `binary`      | Boolean | _(Optional)_ If `true`, return transaction data and metadata as binary [serialized](serialization.html) to hexadecimal strings. If `false`, return transaction data and metadata as JSON. The default is `false`. |
-| `min_ledger`  | Number  | _(Optional)_ Use this with `max_ledger` to specify a range of up to 1000 [ledger indexes][ledger index], starting with this ledger (inclusive). If the server [cannot find the transaction](#not-found-response), it confirms whether it was able to search all the ledgers in this range. [New in: rippled 1.5.0][] |
-| `max_ledger`  | Number  | _(Optional)_ Use this with `min_ledger` to specify a range of up to 1000 [ledger indexes][ledger index], ending with this ledger (inclusive). If the server [cannot find the transaction](#not-found-response), it confirms whether it was able to search all the ledgers in the requested range. [New in: rippled 1.5.0][] |
+| `transaction` | String  | 事务的256位哈希，十六进制。      |
+| `binary`      | Boolean | _(可选)_ 如果`true`，则将事务数据和元数据作为二进制[序列化]（serialization.html）返回到十六进制字符串。如果`false`，则将事务数据和元数据作为JSON返回。默认值为`false`。 |
+| `min_ledger`  | Number  | _(可选)_ 与`max_ledger`一起使用，以指定从该分类帐（含）开始的最多1000[分类帐索引][分类帐索引]的范围。如果服务器[找不到事务]（#找不到响应），它将确认是否能够搜索此范围内的所有分类帐。 |
+| `max_ledger`  | Number  | _(可选)_ 与`最小分类帐`一起使用，可指定一个范围，最多为1000[分类帐索引][分类帐索引]，以该分类帐（含）结尾。 如果服务器[找不到事务](#not-found-response)，它将确认是否能够搜索请求范围内的所有分类帐。|
 
-**Caution:** This command may successfully find the transaction even if it is included in a ledger _outside_ the range of `min_ledger` to `max_ledger`.
+**Caution:** 此命令可以成功地找到交易记录，即使它包含在`最小分类帐`到`最大分类帐`范围之外的分类帐中。
 
 ## Response Format
 
@@ -435,33 +435,32 @@ rippled tx C53ECF838647FA5A4C780377025FEC7999AB4182590510CA461444B207AB74A9 fals
 
 <!-- MULTICODE_BLOCK_END -->
 
-The response follows the [standard format][], with a successful result containing the fields of the [Transaction object](transaction-formats.html) as well as the following additional fields:
+响应遵循[标准格式][]，成功的结果包含[transation对象]（transaction formats.html）的字段以及以下附加字段:
 
 | `Field`        | Type                             | Description              |
 |:---------------|:---------------------------------|:-------------------------|
-| `hash`         | String                           | The SHA-512 hash of the transaction |
-| `inLedger`     | Number                           | _(Deprecated)_ Alias for `ledger_index`. |
-| `ledger_index` | Number                           | The [ledger index][] of the ledger that includes this transaction. |
-| `meta`         | Object (JSON) or String (binary) | [Transaction metadata](transaction-metadata.html), which describes the results of the transaction. |
-| `validated`    | Boolean                          | If `true`, this data comes from a validated ledger version; if omitted or set to `false`, this data is not final. |
-| (Various)      | (Various)                        | Other fields from the [Transaction object](transaction-formats.html) |
+| `hash`         | String                           | 事务的SHA-512哈希 |
+| `inLedger`     | Number                           | _(已弃用)_  `ledger_index`的别名. |
+| `ledger_index` | Number                           | 包含此交易记录的分类帐的[分类帐索引][]。 |
+| `meta`         | Object (JSON) or String (binary) | [Transaction metadata](transaction-metadata.html), 它描述了交易的结果。 |
+| `validated`    | Boolean                          | 如果`为真`，则此数据来自已验证的分类帐版本；如果省略或设置为`false`，则此数据不是最终数据。 |
+| (Various)      | (Various)                        | [事务对象](transaction-formats.html)中的其他字段 |
 
-**Note:** `rippled` 1.7.0 has a known issue where the `meta` field contains JSON even if the request asked for binary. ([#3791](https://github.com/ripple/rippled/pull/3791))
 
 ### Not Found Response
 
-If the server does not find the transaction, it returns a `txnNotFound` error, which could mean two things:
+如果服务器找不到事务，它将返回一个`txnotfound`错误，这可能意味着两件事:
 
-- The transaction has not been included in any ledger version, and has not been executed.
-- The transaction was included in a ledger version that the server does not have available.
+- 该交易记录尚未包含在任何分类帐版本中，并且尚未执行。
+- 该事务包含在服务器没有可用的分类帐版本中。
 
-This means that a `txnNotFound` on its own is not sufficient to know the [final outcome of a transaction](finality-of-results.html).
+这意味着一个`txn单独找到的`不足以知道事务的[最终结果](finality-of-results.html).
 
-To further narrow down the possibilities, you can provide a range of ledgers to search using the `min_ledger` and `max_ledger` fields in the request. If you provide **both** of those fields, the `txnNotFound` response includes the following field:
+为了进一步缩小可能性，您可以使用请求中的`min_ledger`和`max_ledger`字段提供一系列分类帐进行搜索。如果您提供**这两个**，则`txnNotFound`响应包含以下字段:
 
 | `Field`        | Type      | Description                              |
 |:---------------|:----------|:-----------------------------------------|
-| `searched_all` | Boolean   | _(Omitted unless the request provided `min_ledger` and `max_ledger`)_ If `true`, the server was able to search all of the specified ledger versions, and the transaction was in none of them. If `false`, the server did not have all of the specified ledger versions available, so it is not sure if one of them might contain the transaction. [New in: rippled 1.5.0][] |
+| `searched_all` | Boolean   | _(除非请求提供了`min_ledger`和`max_ledger`，否则省略)_ 如果`为真`，则服务器可以搜索所有指定的分类帐版本，而事务不在其中。如果`false`，则服务器没有所有指定的分类帐版本可用，因此不确定其中一个是否包含该事务。 |
 
 `txnNotFound`响应的一个示例，该响应完全搜索了请求的分类帐范围:
 
@@ -516,7 +515,7 @@ _JSON-RPC_
 
 ## Possible Errors
 
-* Any of the [universal error types][].
+* 任何[通用错误类型][]。
 * `invalidParams` - 一个或多个字段指定不正确，或者缺少一个或多个必需字段。
 * `txnNotFound` - 交易记录不存在，或者它是`rippled`不可用的分类帐版本的一部分。
 * `excessiveLgrRange` - 请求的`min_ledger`和`max_ledger`字段相距超过1000。

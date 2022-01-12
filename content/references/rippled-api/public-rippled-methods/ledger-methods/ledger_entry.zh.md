@@ -677,7 +677,7 @@ rippled json ledger_entry '{ "ticket": { "owner": "rf1BiGeXwwQoi8Z2ueFYTEXSwuJYf
 
 ## Possible Errors
 
-* Any of the [universal error types][].
+* 任何[通用错误类型][]。
 * `deprecatedFeature` - 请求指定了一个已删除的字段，例如`generator`。
 * `entryNotFound` - 请求的分类帐对象在分类帐中不存在。
 * `invalidParams` - 一个或多个字段指定不正确，或者缺少一个或多个必需字段。

@@ -127,7 +127,7 @@ If the `previous` field is provided, it shows the previous status of this peer r
 
 ### Possible Errors
 
-- Any of the [universal error types][].
+- 任何[通用错误类型][]。
 - `invalidParams` - 一个或多个字段指定不正确，或者缺少一个或多个必需字段。
 - `publicMalformed` - The `public_key` field of the request is not valid. It must be a valid node public key in [base58][] format.
 - `reportingUnsupported` - ([Reporting Mode][] servers only) This method is not available in Reporting Mode.

@@ -107,7 +107,7 @@ Connecting to 127.0.0.1:5005
 
 ### Possible Errors
 
-* Any of the [universal error types][].
+* 任何[通用错误类型][]。
 * `badSeed` - The request provided an invalid seed value. This usually means that the seed value appears to be a valid string of a different format, such as an account address or validation public key.
 
 <!--{# common link defs #}-->

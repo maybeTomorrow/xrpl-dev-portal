@@ -183,7 +183,7 @@ rippled account_channels rN7n7otQDd6FczFgLdSqtcsAUxDkw6fzRH rf1BiGeXwwQoi8Z2ueFY
 
 ## Possible Errors
 
-* Any of the [universal error types][].
+* 任何[通用错误类型][]。
 * `invalidParams` - 一个或多个字段指定不正确，或者缺少一个或多个必需字段。
 * `actNotFound` - 请求的`帐户`字段中指定的地址与分类帐中的帐户不对应。
 * `lgrNotFound` - `ledger哈希`或`ledger索引`指定的分类帐不存在，或者确实存在，但服务器没有它。

@@ -66,7 +66,7 @@ Use this command with no parameter to query the existing `can_delete` setting.
 
 ### Possible Errors
 
-- Any of the [universal error types][].
+- 任何[通用错误类型][]。
 - `invalidParams` - 一个或多个字段指定不正确，或者缺少一个或多个必需字段。
 - `lgrNotFound` - The ledger specified by the `can_delete` field of the request does not exist, or it does exist but the server does not have it.
 - `notEnabled` - If either online deletion or advisory deletion are not enabled in the server's configuration.

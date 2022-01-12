@@ -132,7 +132,7 @@ Each member of the `peers` array of the response is an object that describes one
 
 ### Possible Errors
 
-- Any of the [universal error types][].
+- 任何[通用错误类型][]。
 - `invalidParams` - One or more required fields were omitted from the request, or a provided field was specified as the wrong data type.
 - `reportingUnsupported` - ([Reporting Mode][] servers only) This method is not available in Reporting Mode.
 

@@ -115,7 +115,7 @@ rippled channel_verify aB44YfzW24VDEJQ2UuLPV2PvqcPCSoLnL7y5M1EzhdW4LnK5xMS3 5DB0
 
 ## Possible Errors
 
-* Any of the [universal error types][].
+* 任何[通用错误类型][]。
 * `invalidParams` - 一个或多个字段指定不正确，或者缺少一个或多个必需字段。
 * `publicMalformed` - 请求的`public_key`字段不是正确格式的有效公钥。公钥是33字节，必须用base58或十六进制表示。帐户公钥的[base58表示形式以字母`a`](base58-encodings.html)开头。十六进制表示法有66个字符长。
 * `channelMalformed` - 请求的`channel_id`字段不是有效的通道id。通道id必须是256位（64个字符）的十六进制字符串。

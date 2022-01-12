@@ -250,7 +250,7 @@ rippled submit_multisigned '{
 
 ## Possible Errors
 
-* Any of the [universal error types][].
+* 任何[通用错误类型][]。
 * `invalidParams` - 一个或多个字段指定不正确，或者缺少一个或多个必需字段。
 * `srcActMalformed` - The `Account` field from the `tx_json` was invalid or missing.
 * `internal` - An internal error occurred. This includes the case where a signature is not valid for the transaction JSON provided.

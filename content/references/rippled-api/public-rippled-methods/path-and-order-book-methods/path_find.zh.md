@@ -458,7 +458,7 @@ blurb: Find a path for a payment between two accounts and receive updates.
 
 ### Possible Errors
 
-* Any of the [universal error types][].
+* 任何[通用错误类型][]。
 * `invalidParams` - 一个或多个字段指定不正确，或者缺少一个或多个必需字段。
 * `noEvents` - 您使用的协议不支持异步回调，例如JSON-RPC(有关与JSON-RPC兼容的路径查找方法，请参阅[ripple_path_find method][]。）
 
@@ -578,7 +578,7 @@ blurb: Find a path for a payment between two accounts and receive updates.
 
 ### Possible Errors
 
-* Any of the [universal error types][].
+* 任何[通用错误类型][]。
 * `invalidParams` - 一个或多个字段指定不正确，或者缺少一个或多个必需字段。
 * `noEvents` - 您使用的协议不支持异步回调，例如JSON-RPC(有关与JSON-RPC兼容的路径查找方法，请参阅[路径查找方法][]。）
 * `noPathRequest` - 当没有打开的寻路请求时，您尝试检查寻路请求的状态。

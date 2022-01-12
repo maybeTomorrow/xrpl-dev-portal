@@ -439,7 +439,7 @@ The following fields are deprecated, and may be omitted: `paths_canonical`, and 
 
 ## Possible Errors
 
-* Any of the [universal error types][].
+* 任何[通用错误类型][]。
 * `tooBusy` - The server is under too much load to calculate paths. Not returned if you are connected as an admin.
 * `invalidParams` - 一个或多个字段指定不正确，或者缺少一个或多个必需字段。
 * `srcActMissing` - 请求中省略了`source_account`字段。

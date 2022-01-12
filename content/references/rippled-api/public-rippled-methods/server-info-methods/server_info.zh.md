@@ -535,7 +535,7 @@ The `info` object may have some arrangement of the following fields:
 
 ## Possible Errors
 
-* Any of the [universal error types][].
+* 任何[通用错误类型][]。
 
 
 <!--{# common link defs #}-->

@@ -288,7 +288,7 @@ rippled json gateway_balances ' {"account": "rMwjYedjc7qqtKYVLiAccJSmCwih4LnE2q"
 
 ## Possible Errors
 
-* Any of the [universal error types][].
+* 任何[通用错误类型][]。
 * `invalidParams` - 一个或多个字段指定不正确，或者缺少一个或多个必需字段。
 * `invalidHotWallet` - `hotwallet`字段中指定的一个或多个地址不是该帐户从请求中发出的持有货币的帐户的[Address][]。
 * `actNotFound` - 在请求的`帐户`字段中指定的[地址][]与分类帐中的帐户不对应。

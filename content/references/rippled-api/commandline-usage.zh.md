@@ -34,7 +34,7 @@ curated_anchors:
 
 | Option          | Description                                                |
 |:----------------|:-----------------------------------------------------------|
-| `--conf {FILE}` | Use `{FILE}` as the config file instead of looking for config files in the default locations. If not specified, `rippled` first checks the local working directory for a `rippled.cfg` file. On Linux, if that file is not found, `rippled` next checks for `$XDG_CONFIG_HOME/ripple/ripple.cfg`. (Typically, `$XDG_CONFIG_HOME` maps to `$HOME/.config`.) |
+| `--conf {FILE}` | 使用`{FILE}`作为配置文件，而不是在默认位置查找配置文件。如果未指定，`rippled`首先检查本地工作目录中的`rippled.cfg`文件。在Linux上，如果找不到该文件，`rippled`接下来检查`$XDG\u CONFIG\u HOME/ripple/ripple.cfg`。（通常，`$XDG\u CONFIG\u HOME`映射到`$HOME/.CONFIG`。） |
 
 ### Verbosity Options
 
@@ -42,9 +42,9 @@ curated_anchors:
 
 | Option      | Short Version | Description                                    |
 |:------------|:--------------|:-----------------------------------------------|
-| `--debug`   |               | **DEPRECATED** Enables trace-level debugging (alias for `--verbose`). Use the [log_level method][] instead. |
-| `--silent`  |               | Don't write logs to standard out and standard error during startup. Recommended when starting `rippled` as a systemd unit to reduce redundant logging. |
-| `--verbose` | `-v`          | **DEPRECATED** Enables trace-level debugging. Use the [log_level method][] instead. |
+| `--debug`   |               | **DEPRECATED** 启用跟踪级调试（别名为`--详细`）。改用[log\u level方法][]。 |
+| `--silent`  |               | 启动时不要将日志写入标准输出和标准错误。建议在启动`时将`作为systemd单元，以减少冗余日志记录。 |
+| `--verbose` | `-v`          | **DEPRECATED** 启用跟踪级调试。改用[log\u level方法][]。 |
 
 
 
@@ -133,10 +133,10 @@ rippled -u [OPTIONS]
 
 | Option                             | Short Version | Description             |
 |:-----------------------------------|:--------------|:------------------------|
-| `--unittest-ipv6`                  |               | Use [IPv6](https://en.wikipedia.org/wiki/IPv6) to connect to the local server when running unit tests. If not provided, unit tests use IPv4 instead. [New in: rippled 1.1.0][] |
-| `--unittest-jobs {NUMBER_OF_JOBS}` |               | Use the specified number of processes to run unit tests. This can finish running tests faster on multi-core systems. The `{NUMBER_OF_JOBS}` should be a positive integer indicating the number of processes to use. |
-| `--unittest-log`                   |               | Allow unit tests to write to logs even if `--quiet` is specified. (No effect otherwise.) |
-| `--quiet`                          | `-q`          | Print fewer diagnostic messages when running unit tests. |
+| `--unittest-ipv6`                  |               | 使用[iv6](https://en.wikipedia.org/wiki/IPv6)运行单元测试时连接到本地服务器。如果没有提供，单元测试将改用IPv4。 |
+| `--unittest-jobs {NUMBER_OF_JOBS}` |               | 使用指定数量的进程来运行单元测试。这样可以更快地在多核系统上完成测试。作业}`的`{NUMBER\u应为正整数，表示要使用的进程数。 |
+| `--unittest-log`                   |               | 即使指定了`--quiet`，也允许单元测试写入日志(否则不起作用。） |
+| `--quiet`                          | `-q`          | 运行单元测试时打印更少的诊断消息。 |
 
 
 ### Specific Unit Tests
@@ -145,9 +145,9 @@ rippled -u [OPTIONS]
 rippled --unittest={TEST_OR_PACKAGE_NAME}
 ```
 
-By default, `rippled` runs all unit tests except ones that are classified as "manual". You can run an individual test by specifying its name, or run a subset of tests by specifying a package name.
+默认情况下，`rippled`运行所有单元测试，但分类为"manual"的单元测试除外。您可以通过指定单个测试的名称来运行该测试，也可以通过指定包名称来运行测试的子集。
 
-Tests are grouped into a hierarchy of packages separated by `.` characters and ending in the test case name.
+测试被分组到包的层次结构中，包由`.`个字符分隔，以测试用例名称结尾。
 
 #### Printing Unit Tests
 
@@ -155,11 +155,11 @@ Tests are grouped into a hierarchy of packages separated by `.` characters and e
 rippled --unittest=print
 ```
 
-The `print` unit test is a special case that prints a list of available tests with their packages.
+`print`单元测试是一个特例，它打印可用测试及其包的列表。
 
 #### Manual Unit Tests
 
-Certain unit tests are classified as "manual" because they take a long time to complete. These tests are marked with `|M|` in the output of the `print` unit test. Manual tests do not run by default when you run all unit tests or a package of unit tests. You can run manual tests individually by specifying the name of the test. For example:
+某些单元测试被归类为"手动"，因为它们需要很长时间才能完成。这些测试在`print`单元测试的输出中标记为`|M|`。当运行所有单元测试或单元测试包时，默认情况下不会运行手动测试。通过指定测试的名称，可以单独运行手动测试。例如:
 
 ```bash
 $ ./rippled --unittest=ripple.tx.OversizeMeta
@@ -171,11 +171,11 @@ Longest suite times:
 
 #### Providing Arguments to Unit Tests
 
-Certain manual unit tests accept an argument. You can provide the argument with the following option:
+某些手动单元测试接受一个参数。可以使用以下选项提供参数:
 
 | Option                  | Description                                        |
 |:------------------------|:---------------------------------------------------|
-| `--unittest-arg {ARG}`  | Provide the argument `{ARG}` to the unit test(s) currently being run. Each unit test that accepts arguments defines its own argument format.  |
+| `--unittest-arg {ARG}`  | 为当前正在运行的单元测试提供参数`{ARG}`。接受参数的每个单元测试都定义自己的参数格式。  |
 
 
 <!--{# common link defs #}-->

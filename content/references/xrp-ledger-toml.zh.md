@@ -48,51 +48,51 @@ https://xrp.services.example.com/.well-known/xrp-ledger.toml
 
 ### Domain
 
-The domain where you serve the `xrp-ledger.toml` file is a statement of ownership. The file's contents are not as useful or trustworthy when they stand on their own. For practical reasons, it may be undesirable to serve the file from your main domain, so you MAY use any number of subdomains. When setting the [`Domain` field of XRP Ledger accounts](accountset.html#domain), you MUST provide the full domain, including all subdomains you used. See [Account Verification](#account-verification) for details.
+提供`xrp ledger.toml`文件的域是所有权声明。 当文件内容独立存在时，它们就没有那么有用或可信了。 出于实际原因，可能不希望从主域提供文件，因此可以使用任意数量的子域。 设置XRP分类科目]的[`Domain`字段时](accountset.html#domain), 您必须提供完整的域，包括您使用的所有子域。 有关详细信息，请参阅[帐户验证]（#account-verification）。
 
-You MAY serve the same file from multiple subdomains, if desired. For example, if the subdomain `www.example.com` goes to the same website as `example.com`, you can serve the file from both locations. If your website _requires_ the `www` prefix, be sure to include it when you specify the domain (for example, when setting the `Domain` field of an XRP Ledger account).
+如果需要，您可以从多个子域提供相同的文件。例如，如果子域`www.example.com` 转到与`example.com`相同的网站，您可以从两个位置提供文件。 如果您的网站需要`www`前缀，请确保在指定域时包含该前缀 （例如，设置XRP分类科目的`域`字段时）。
 
-It is RECOMMENDED that you serve a human-readable website from the same domain as the `xrp-ledger.toml` file. The website can provide further information about your identity and how you use the XRP Ledger, which helps to build trust toward you and your services.
+建议您提供一个与`xrp ledger.toml`文件来自同一域的可读网站。该网站可以提供有关您的身份以及如何使用XRP分类账的更多信息，这有助于建立对您和您的服务的信任。
 
 
 ### Path
 
-In compliance with [RFC5785](https://tools.ietf.org/html/rfc5785), the path MUST start with `/.well-known/`. The file MUST be available at the path `/.well-known/xrp-ledger.toml` exactly (case-sensitive, all lower case). <!-- SPELLING_IGNORE: rfc5785 -->
+符合[RFC5785](https://tools.ietf.org/html/rfc5785)，路径必须以`/.well-known/`开头。文件必须位于路径`/.well-known/xrp-ledger.toml`处（区分大小写，全部小写）。 <!-- SPELLING_IGNORE: rfc5785 -->
 
-You MAY, if desired, serve the same file from paths with different capitalization, such as `/.well-known/XRP-Ledger.TOML`. You MUST NOT serve different contents depending on how the path is capitalized.
+如果需要，您可以从不同大小写的路径提供相同的文件，例如`/.well-known/XRP-Ledger.TOML`。 不能根据路径的大写方式提供不同的内容。
 
 
 ### Headers
 
 #### Content-Type
 
-The recommended **Content-Type** for the `xrp-ledger.toml` file is **`application/toml`**. However, applications consuming the file SHOULD also accept a Content-Type value of `text/plain`.
+`xrp ledger.toml`文件的建议**内容类型**为**`application/toml`**。但是，使用该文件的应用程序也应接受`text/plain`的内容类型值。
 
 #### CORS
 
-To allow scripts on other websites to query the file, [CORS][] should be enabled for the file. Specifically, the server should provide the following header when serving `xrp-ledger.toml`:
+若要允许其他网站上的脚本查询该文件，应为该文件启用[CORS][]。具体来说，服务器在为`xrp ledger.toml`提供服务时应提供以下标头：
 
 ```
 Access-Control-Allow-Origin: *
 ```
 
-For information on how to configure your server to provide this header, see [CORS setup](#cors-setup).
+有关如何配置服务器以提供此标头的信息，请参阅\ors安装程序]（#cors安装程序）。
 
 #### Other Headers
 
-The server MAY use other standard HTTP headers as desired, including ones for compression, cache control, redirection, and linking related resources.
+服务器可以根据需要使用其他标准HTTP报头，包括用于压缩、缓存控制、重定向和链接相关资源的报头。
 
 ### Generation
 
-The `xrp-ledger.toml` file MAY be an actual file stored on the web server, or it MAY be generated on-demand by the web server. The latter case may be preferable depending on the contents provided in the file or the configuration of your website.
+`xrp ledger.toml`文件可能是存储在web服务器上的实际文件，也可能是由web服务器按需生成的。后一种情况可能更可取，这取决于文件中提供的内容或网站的配置。
 
 
 
 ## Contents
 
-The contents of the `xrp-ledger.toml` file MUST be formatted in [TOML](https://github.com/toml-lang/toml). **All contents are optional.** Comments are optional, but encouraged for readability.
+`xrp ledger.toml`文件的内容必须用[TOML]格式化(https://github.com/toml-lang/toml). **所有内容都是可选的。**注释是可选的，但鼓励可读性。
 
-Example contents:
+示例内容:
 
 ```
 # Example xrp-ledger.toml file. These contents should not be considered
@@ -163,103 +163,104 @@ symbol = "😆" # In practical situations, it may be unwise to use emoji
 
 ### Metadata
 
-The metadata section provides information about the `xrp-ledger.toml` file itself. If present, this section MUST BE presented as a single table, headed by the line  `[METADATA]`, using _single_ square brackets. (Most other sections of the `xrp-ledger.toml` file use double brackets, for arrays of information, but there is at most one `[METADATA]` section.) You MAY provide any of the following fields (case-sensitive):
+元数据部分提供有关`xrp ledger.toml`文件本身的信息。如果存在，则必须将此节显示为一个表，以行`[]`为标题，并使用单\u方括号(`xrp ledger.toml`文件的大多数其他部分使用双括号表示信息数组，但最多有一个`[]`部分。）您可以提供以下任何字段（区分大小写）:
 
 | Field      | Type             | Description                                  |
 |:-----------|:-----------------|:---------------------------------------------|
-| `modified` | Offset Date-Time | The time the `xrp-leder.toml` file was last modified.    |
-| `expires`  | Offset Date-Time | If the current time is equal or greater than this time, the `xrp-ledger.toml` file should be considered expired. |
+| `modified` | Offset Date-Time | 上次修改`xrp leder.toml`文件的时间。    |
+| `expires`  | Offset Date-Time | 如果当前时间等于或大于此时间，`xrp ledger.toml`文件应视为已过期。 |
 
-The specification does not define a `domain` field; the field should be determined from the site serving the file.
+规范没有定义`域`字段；该字段应根据提供文件的站点确定。
 
-**Tip:** For Offset Date-Time values, Ripple RECOMMENDS that you use the offset `Z` and provide precision up to milliseconds. (For example, `2019-01-22T22:26:58.027Z`) If you edit the file by hand, you MAY approximate the time by providing zeroes for the hours, minutes, seconds, and milliseconds. (For example, `2019-01-22T00:00:00.000Z`)
+**Tip:** 对于偏移日期时间值，Ripple建议使用偏移量`Z`，并提供高达毫秒的精度(例如，`2019-01-22T22:26:58.027Z`）如果手动编辑文件，则可以通过为小时、分钟、秒和毫秒提供零来估计时间(例如，`2019-01-22T00:00:00.000Z`）
 
 ### Validators
 
-The validators list provides information about validating servers you run. If present, the validators list MUST BE presented as an array of tables, with each entry using the header `[[VALIDATORS]]`, including double square brackets. Each entry describes a separate validating server.
+validators列表提供有关验证您运行的服务器的信息。如果存在，验证程序列表必须以表数组的形式呈现，每个条目都使用头`[[VALIDATORS]]`，包括双方括号。每个条目描述一个单独的验证服务器。
 
-The _first_ `[[VALIDATORS]]` entry in the file is treated as your primary validator. If you run one or more validators for the production XRP Ledger, you should put the one you want others to trust first.
+文件中的第一个\u`[[VALIDATORS]]`条目被视为您的主验证器。如果您为生产XRP账本运行一个或多个验证器，您应该将希望其他人信任的验证器放在第一位。
 
-For _each_ `[[VALIDATORS]]` entry, you MAY provide any of the following fields:
+对于 _每个_ `[[VALIDATORS]]`条目，您可以提供以下任何字段:
 
 | Field        | Type   | Description                                          |
 |:-------------|:-------|:-----------------------------------------------------|
-| `public_key` | String | The master public key of your primary validator, encoded in the XRP Ledger's base58 format (typically, this starts with `n`). |
-| `attestation`| String | A signed message, in hexadecimal, indicating that the same entity runs this validator and the domain serving this TOML file. For more information, see [Domain Verification](xrp-ledger-toml.html#domain-verification).
-| `network`  | String | Which network chain this validator follows. If omitted, clients SHOULD assume that the validator follows the production XRP Ledger. Use `main` to explicitly specify the production XRP Ledger. Use `testnet` for Ripple's XRP Ledger Test Net. You MAY provide other values to describe other test nets or non-standard network chains. |
-| `owner_country` | String | The two-letter ISO-3166-2 country code describing the main legal jurisdiction that you (the validator's owner) are subject to. |
-| `server_country` | String | The two-letter ISO-3166-2 country code describing the physical location where this validating server is. |
-| `unl` | String | An HTTPS URL where one can find the list of other validators this validator trusts. If the validator is configured to use a validator list site for UNL recommendations, this MUST match the server's configuration. For the production XRP Ledger network, use `https://vl.ripple.com` (trailing slash optional). |
+| `public_key` | String | 主验证器的主公钥，以XRP分类帐的base58格式编码（通常以`n`开头）。 |
+| `attestation`| String | 十六进制的签名消息，指示同一实体运行此验证程序和服务于此TOML文件的域。有关详细信息，请参阅[域验证](xrp-ledger-toml.html#domain-verification).
+| `network`  | String | 验证程序遵循哪个网络链。如果省略，客户机应该假设验证器遵循生产XRP分类帐。使用`main`显式指定生产XRP分类帐。使用`testnet`作为Ripple的XRP分类帐测试网。您可以提供其他值来描述其他测试网络或非标准网络链。 |
+| `owner_country` | String | 两个字母的ISO-3166-2国家代码，描述您（验证器的所有者）所受的主要法律管辖权。 |
+| `server_country` | String | 两个字母的ISO-3166-2国家代码，描述此验证服务器所在的物理位置。 |
+| `unl` | String | 一个HTTPS URL，您可以在其中找到此验证程序信任的其他验证程序的列表。如果验证器配置为使用验证器列表站点进行UNL推荐，则这必须与服务器的配置相匹配。对于生产XRP分类帐网络，使用`https://vl.ripple.com` （尾部斜杠可选）。 |
 
 
 ### Accounts
 
-The accounts list provides information about XRP Ledger accounts you own. If present, the accounts list MUST BE presented as an array of tables, with each entry using the header `[[ACCOUNTS]]`, including double square brackets. Each entry describes a separate account. For _each_ `[[ACCOUNTS]]` entry, you MAY provide any of the following fields:
+帐户列表提供有关您拥有的XRP分类帐帐户的信息。如果存在，帐户列表必须以表格数组的形式显示，每个条目都使用标题`[[ACCOUNTS]]`，包括双方括号。每个条目描述一个单独的帐户。对于每个u`[[[]]`条目，您可以提供以下任何字段:
 
 | Field     | Type   | Description                                             |
 |:----------|:-------|:--------------------------------------------------------|
-| `address` | String | The public address of the account, encoded in the XRP Ledger's base58 format (typically, this starts with an `r`). |
-| `network` | String | The network chain where this account is primarily used. If omitted, clients SHOULD assume that the account is claimed on the production XRP Ledger _and_ possibly other network chains. Use `main` for the production XRP Ledger. Use `testnet` for Ripple's XRP Ledger Test Net. You MAY provide other values to describe other test nets or non-standard network chains. |
-| `desc`    | String | A human-readable description of this account's purpose or how you use it. |
+| `address` | String | 账户的公共地址，以XRP分类账的base58格式编码（通常以`r`开头）。 |
+| `network` | String | 主要使用此帐户的网络链。如果省略，客户应该假设该帐户是在生产XRP分类账和其他网络链上申请的。使用`主`作为生产XRP分类帐。使用`testnet`作为Ripple的XRP分类帐测试网。您可以提供其他值来描述其他测试网络或非标准网络链。 |
+| `desc`    | String | 对该帐户的用途或使用方法的可读描述。 |
 
-**Caution:** Anyone could claim ownership of any account by hosting an `xrp-ledger.toml` file, so the presence of an account here SHOULD NOT be considered authoritative unless the [`Domain` field for these accounts in the XRP Ledger](accountset.html#domain) also matches the domain that this `xrp-ledger.toml` file was served from. See [Account Verification](#account-verification) for details.
+**Caution:** 任何人都可以通过托管一个`xrp ledger.toml`文件来声明对任何帐户的所有权，因此，除非XRP ledger]（accountset.html#domain）中这些帐户的[`Domain`字段也与提供此`xrp ledger.toml`文件的域匹配，否则此处的帐户不应被视为权威帐户。有关详细信息，请参阅[帐户验证]（#帐户验证）。
 
 
 ### Principals
 
-The principals list provides information about the people (or business entities) involved in your XRP Ledger businesses and services. If present, the principals list MUST BE presented as an array of tables, with each entry using the header `[[PRINCIPALS]]`, including double square brackets. Each entry describes a different point of contact. For _each_ `[[PRINCIPALS]]` entry, you MAY provide any of the following fields:
+委托人列表提供有关XRP分类帐业务和服务中涉及的人员（或业务实体）的信息。 如果存在，主体列表必须以表数组的形式呈现，每个条目都使用头`[[[]]`，包括双方括号。每个条目描述不同的接触点。对于每个`[[PRINCIPALS]]`条目，您可以提供以下任何字段:
 
 | Field   | Type   | Description                                              |
 |:--------|:-------|:---------------------------------------------------------|
-| `name`  | String | The name of this principal.                              |
-| `email` | String | The email address where this principal can be contacted. |
+| `name`  | String | 这个校长的名字。                              |
+| `email` | String | 可以联系此负责人的电子邮件地址。 |
 
-You may provide other contact information as desired. (See [Custom Fields](#custom-fields) for information about custom fields.)
+您可以根据需要提供其他联系方式。 (有关自定义字段的信息，请参阅[自定义字段]（#自定义字段）。)
 
 
 ### Servers
 
-The servers list provides information about XRP Ledger servers (`rippled`) you run with public access. If present, the servers list MUST BE presented as an array of tables, with each entry using the header `[[SERVERS]]`, including double square brackets. Each entry describes a different server or server cluster. For _each_ `[[SERVERS]]` entry, you MAY provide any of the following fields:
+“服务器”列表提供有关使用公共访问运行的XRP分类帐服务器（`rippled`）的信息。如果存在，服务器列表必须以表数组的形式显示，每个条目都使用头`[[SERVERS]]`，包括双方括号。每个条目描述不同的服务器或服务器集群。对于每个`[[[]]`条目，您可以提供以下任何字段:
 
 | Field   | Type   | Description                                              |
 |:--------|:-------|:---------------------------------------------------------|
-| `json_rpc` | String (URL) | The URL where you serve a public JSON-RPC API. This MUST begin with either `http://` or `https://`. HTTPS is RECOMMENDED for public APIs. |
-| `ws` | String (URL) | The URL where you serve a public WebSocket API. This MUST begin with either `ws://` or `wss://`. WSS is RECOMMENDED for public APIs. |
-| `peer` | String (URL) | The URL where your server is listening for the XRP Ledger Peer Protocol. Other XRP Ledger servers can connect at this URL. If your server provides a Peer Crawler response, it is served from this URL with `crawl` appended. |
-| `network`  | String | Which network chain this server follows. If omitted, clients SHOULD assume that the server follows the production XRP Ledger. Use `main` to explicitly specify the production XRP Ledger. Use `testnet` for Ripple's XRP Ledger Test Net. You MAY provide other values to describe other test nets or non-standard network chains. |
+| `json_rpc` | String (URL) | 提供公共JSON-RPC API的URL。必须以`http://`或`https://`开头。建议将HTTPS用于公共API。 |
+| `ws` | String (URL) | 提供公共WebSocket API的URL。必须以`ws://`或`wss://`开头。建议将WSS用于公共API。 |
+| `peer` | String (URL) | 服务器正在侦听XRP Ledger对等协议的URL。其他XRP账本服务器可以通过此URL连接。如果您的服务器提供对等爬网程序响应，则会从此URL向其提供附加了`爬网`的服务。 |
+| `network`  | String | 此服务器遵循哪个网络链。如果省略，客户机应该假设服务器遵循生产XRP分类帐。使用`main`显式指定生产XRP分类帐。 使用`testnet`作为Ripple的XRP分类帐测试网。您可以提供其他值来描述其他测试网络或非标准网络链。 |
 
-For all URLs in this section, the trailing slash is RECOMMENDED. If omitted, client applications SHOULD assume that there is a trailing slash implied.
+对于本节中的所有URL，建议使用尾随斜杠。如果省略，客户机应用程序应该假定后面有一个斜杠。
 
 
 ### Currencies
 
-If you issue any assets, tokens, or currencies in the XRP Ledger, you can provide information about them in the `[[CURRENCIES]]` list. If present, the currencies list MUST BE presented as an array of tables, with each entry using the header `[[CURRENCIES]]`, including double square brackets. Each entry describes a separate issued currency or asset. For _each_ `[[CURRENCIES]]` entry, you MAY provide any of the following fields:
+如果您在XRP分类账中发行任何资产、代币或货币，您可以在`[[CURRENCIES]]`列表中提供有关这些资产、代币或货币的信息。如果存在，货币列表必须以表格数组的形式显示，每个条目都使用标题`[[currences]]`，包括双方括号。每个条目描述一个单独的发行货币或资产。对于每个u`[[CURRENCIES]]`条目，您可以提供以下任何字段:
 
 | Field   | Type   | Description                                           |
 |:--------|:-------|:------------------------------------------------------|
-| `code` | String | The (case-sensitive) ticker symbol of this currency in the XRP Ledger. This can be a three-digit code, a 40-character hex code, or a custom format (for clients that know how to represent the non-standard code in the XRP Ledger). See the [Currency Code reference](currency-formats.html#currency-codes) for information on the XRP Ledger's currency code formats. |
-| `display_decimals` | Number | The number of decimals that a client application should use to display amounts of this currency. |
-| `issuer` | String | The address of the XRP Ledger account where you issue this currency, encoded in the XRP Ledger's base58 format (typically, this starts with an `r`). You SHOULD also list this address in the `[[ACCOUNTS]]` list. (Reminder: the presence of an address here is not authoritative on its own. See [Account Verification](#account-verification) for details.) |
-| `network` | String | The network chain where you issue this currency. Use `main` to explicitly specify the production XRP Ledger. If omitted, clients SHOULD assume that the currency is issued on the production XRP Ledger. Use `testnet` for Ripple's XRP Ledger Test Net. You MAY provide other values to describe other test nets or non-standard network chains. |
-| `symbol` | String | The text symbol, such "$" or "€", that should be used with amounts of this asset or currency, if it has a symbol in the Unicode standard. |
+| `code` | String | XRP分类账中该货币的（区分大小写）股票代码符号。这可以是三位代码、40个字符的十六进制代码或自定义格式（对于知道如何在XRP分类账中表示非标准代码的客户机）。有关XRP分类帐货币代码格式的信息，请参阅[货币代码参考]（currency formats.html#currency codes）。 |
+| `display_decimals` | Number | 客户端应用程序应用于显示此货币金额的小数位数。 |
+| `issuer` | String | 发行此货币的XRP分类科目的地址，以XRP分类科目的base58格式编码（通常以`r`开头）。您还应该在`[[]]`列表中列出此地址(提醒：这里的地址本身并不具有权威性。有关详细信息，请参阅[帐户验证]（#帐户验证） |
+| `network` | String | 发行这种货币的网络链。使用`main`显式指定生产XRP分类帐。如果省略，客户应该假设货币是在生产XRP分类账上发行的。使用`testnet`作为Ripple的XRP分类帐测试网。您可以提供其他值来描述其他测试网络或非标准网络链。 |
+| `symbol` | String | 文本符号，如"$"或"€"，如果在Unicode标准中有符号，则应与此资产或货币的金额一起使用。 |
 
 
 ### Custom Fields
 
-The `xrp-ledger.toml` file is intended for users of the XRP Ledger to provide information to other users, scripts, and applications. As such, there may be many kinds of information that are useful to convey but are not described in this specification. Users are encouraged to add other fields at any level of the `xrp-ledger.toml` file, as desired to convey relevant information.
+`xrp ledger.toml`文件是为XRP ledger的用户准备的，用于向其他用户、脚本和应用程序提供信息。因此，可能有许多种类的信息是有用的，但是在本说明书中没有描述。鼓励用户根据需要在`xrp ledger.toml`文件的任何级别添加其他字段，以传递相关信息。
 
-Tools that parse the `xrp-ledger.toml` file MUST accept documents that contain any other fields that the application is not familiar with. Those tools MAY make those additional fields available to higher-level applications that call them, or MAY discard those fields. To maintain forward-compatibility with future versions of this specification, tools MAY also discard fields specified in this standard. Tools MUST NOT return an error if an `xrp-ledger.toml` file contains an unrecognized field. To detect typos, tools MAY provide a warning on unrecognized fields, especially if those field names are similar to the names of standard fields.
+分析`xrp ledger.toml`文件的工具必须接受包含应用程序不熟悉的任何其他字段的文档。这些工具可以使调用这些字段的高级应用程序可以使用这些附加字段，也可以丢弃这些字段。为了保持与本规范未来版本的向前兼容性，工具还可以丢弃本标准中指定的字段。如果`xrp ledger.toml`文件包含无法识别的字段，则工具不能返回错误。为了检测输入错误，工具可能会对无法识别的字段提供警告，尤其是那些字段名与标准字段名类似的情况。
 
-Tools MAY return an error if a field they recognize is not formatted as expected, even if that field is not defined in this specification.
+如果工具识别的字段未按预期格式化，则工具可能会返回错误，即使该字段未在本规范中定义。
 
-When creating custom fields, be mindful of the field name you choose. If you use a very generic field name, other users may use the same name to mean something different, or formatted in a conflicting way. If you use a custom field that you think others will find useful, please contribute a specification for your field to the maintainers of this document.
+创建自定义字段时，请注意所选的字段名。如果您使用非常通用的字段名，其他用户可能会使用相同的名称来表示不同的内容，或者以冲突的方式格式化。如果您使用您认为其他人会发现有用的自定义字段，请为您的字段向本文档的维护人员提供一个规范。
 
 
 ## CORS Setup
 
-You MUST configure your web server to allow Cross-Origin Resource Sharing ([CORS][]) for the `xrp-ledger.toml` file. This configuration depends on your web server.
+必须将web服务器配置为允许`xrp ledger.toml`文件的跨源资源共享（[CORS][]）。此配置取决于您的web服务器。
 
-If you run an Apache HTTP Server, add the following to your config file:
+
+如果运行apache http服务器，请将以下内容添加到配置文件中:
 
 ```
 <Location "/.well-known/xrp-ledger.toml">
@@ -284,16 +285,16 @@ location /.well-known/xrp-ledger.toml {
 }
 ```
 
-For other web servers, see [I want to add CORS support to my server](https://enable-cors.org/server.html). If you use managed hosting, consult your web host's documentation for how to enable CORS on a specific path. (You probably do not want to enable CORS for your entire website.)
+对于其他web服务器，请参阅[我想将CORS支持添加到我的服务器](https://enable-cors.org/server.html). 如果您使用托管，请参阅您的web主机的文档，了解如何在特定路径上启用CORS(您可能不想为整个网站启用CORS。）
 
 [CORS]: https://developer.mozilla.org/en-US/docs/Web/HTTP/CORS
 
 
 ## Domain Verification
 
-One use for the `xrp-ledger.toml` file is verifying that the same entity that runs a particular domain also runs a particular validator, as identified by the validator's public key. Verifying that a domain and a validator are owned by the same entity provides greater assurances of the identity of the validator operator and is a recommended step for becoming a trusted validator. (For other recommendations, see [Properties of a Good Validator](run-rippled-as-a-validator.html#1-understand-the-traits-of-a-good-validator).)
+`xrp ledger.toml`文件的一个用途是验证运行特定域的同一实体是否也运行由验证程序公钥标识的特定验证程序。验证域和验证程序是否由同一实体拥有可以更好地保证验证程序操作员的身份，这是成为受信任验证程序的建议步骤。(有关其他建议，请参阅 [Properties of a Good Validator](run-rippled-as-a-validator.html#1-understand-the-traits-of-a-good-validator).)
 
-Domain verification requires establishing a two-way link between the domain operator and the validator:
+域验证需要在域操作员和验证程序之间建立双向链接:
 
 1. The domain claims ownership of the validator:
 

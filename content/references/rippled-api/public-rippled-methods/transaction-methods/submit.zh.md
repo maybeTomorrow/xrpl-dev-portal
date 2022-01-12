@@ -22,8 +22,8 @@ blurb: Send a transaction to the network.
 
 | `Field`     | Type    | Description                                          |
 |:------------|:--------|:-----------------------------------------------------|
-| `tx_blob`   | String  | Hex representation of the signed transaction to submit. This can be a [multi-signed transaction](multi-signing.html). |
-| `fail_hard` | Boolean | (Optional, defaults to false) If true, and the transaction fails locally, do not retry or relay the transaction to other servers |
+| `tx_blob`   | String  | 要提交的已签名事务的十六进制表示形式。这可以是[multi-signed transaction](multi-signing.html). |
+| `fail_hard` | Boolean | (可选，默认为false) 如果为true，并且事务在本地失败，则不要重试或将事务中继到其他服务器 |
 
 ### Request Format
 
@@ -68,7 +68,7 @@ submit 1200002280000000240000000361D4838D7EA4C6800000000000000000000000000055534
 
 此模式签署事务并立即提交。此模式用于测试。您不能对[multi-signed transactions](multi-signing.html)使用此模式。
 
-_By default, sign-and-submit mode is [admin-only](admin-rippled-methods.html)._ It can be used as a public method if the server has [enabled public signing](enable-public-signing.html).
+_默认情况下, 签名和提交模式为[仅限管理员](admin-rippled-methods.html)._ It can be used as a public method if the server has [enabled public signing](enable-public-signing.html).
 
 您可以通过以下方式提供用于签署事务的密钥:
 
@@ -316,7 +316,7 @@ Connecting to 127.0.0.1:5005
 
 ## Possible Errors
 
-* Any of the [universal error types][].
+* 任何[通用错误类型][]。
 * `amendmentBlocked` - 无法将事务提交到网络，因为`Ripple`服务器正在运行[amendment blocked](amendments.html#amendment-blocked).
 * `highFee` - 指定了`fee_mult_max`参数，但服务器当前的费用乘数超过了指定的值(签名和提交模式）
 * `internalJson` - 将事务序列化为JSON时发生内部错误。这可能是由事务的许多方面造成的，包括错误的签名或某些字段的格式不正确。

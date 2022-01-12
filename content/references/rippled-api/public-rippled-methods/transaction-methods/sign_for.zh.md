@@ -233,7 +233,7 @@ Connecting to 127.0.0.1:5005
 
 ## Possible Errors
 
-* Any of the [universal error types][].
+* 任何[通用错误类型][]。
 * `invalidParams` - 一个或多个字段指定不正确，或者缺少一个或多个必需字段。
 * `srcActNotFound` - If the `Account` from the transaction is not a funded address in the ledger.
 * `srcActMalformed` - If the signing address (`account` field) from the request is not validly formed.

@@ -133,7 +133,7 @@ Connecting to 127.0.0.1:5005
 
 ### Possible Errors
 
-- Any of the [universal error types][].
+- 任何[通用错误类型][]。
 - `notEnabled` - The server is not configured with a shard store.
 - `tooBusy` - The server is already downloading the shard, either from the peer-to-peer network or as the result of a previous `download_shard` request.
 - `invalidParams` - One or more required fields were omitted from the request, or a provided field was specified as the wrong data type.

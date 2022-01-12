@@ -70,7 +70,7 @@ _The `ledger_cleaner` method is an [admin method](admin-rippled-methods.html) th
 
 ### Possible Errors
 
-* Any of the [universal error types][].
+* 任何[通用错误类型][]。
 * `internal` if one the parameters is specified incorrectly. (This is a bug; the intended error code is `invalidParams`.)
 
 <!--{# common link defs #}-->

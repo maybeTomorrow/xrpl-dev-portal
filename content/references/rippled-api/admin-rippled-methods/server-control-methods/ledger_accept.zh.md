@@ -60,7 +60,7 @@ The response follows the [standard format][], with a successful result containin
 
 ### Possible Errors
 
-* Any of the [universal error types][].
+* 任何[通用错误类型][]。
 * `notStandAlone` - If the `rippled` server is not currently running in stand-alone mode.
 
 <!--{# common link defs #}-->

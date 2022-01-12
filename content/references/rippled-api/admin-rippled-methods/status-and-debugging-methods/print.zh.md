@@ -234,7 +234,7 @@ The response follows the [standard format][]. Additional fields in the result de
 
 ### Possible Errors
 
-* Any of the [universal error types][].
+* 任何[通用错误类型][]。
 
 <!--{# common link defs #}-->
 {% include '_snippets/rippled-api-links.md' %}

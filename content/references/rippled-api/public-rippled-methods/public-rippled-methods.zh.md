@@ -62,26 +62,26 @@ XRP分类账中的账户代表XRP持有人和交易发送者。使用这些方�
 
 支付渠道是一种促进双方重复、单向支付或临时信贷的工具。使用这些方法处理支付渠道。
 
-* **[`channel_authorize`](channel_authorize.html)** - Sign a claim for money from a payment channel.
-* **[`channel_verify`](channel_verify.html)** - Check a payment channel claim's signature.
+* **[`channel_authorize`](channel_authorize.html)** - 签署一份从支付渠道索赔的申请书。
+* **[`channel_verify`](channel_verify.html)** - 检查支付渠道索赔的签名。
 
 
 ## [Subscription Methods](subscription-methods.html)
 
 使用这些方法使服务器能够在各种事件发生时将更新推送到您的客户端，这样您就可以立即知道并做出反应_仅WebSocket API_
 
-* **[`subscribe`](subscribe.html)** - Listen for updates about a particular subject.
-* **[`unsubscribe`](unsubscribe.html)** - Stop listening for updates about a particular subject.
+* **[`subscribe`](subscribe.html)** - 倾听某个特定主题的最新消息。
+* **[`unsubscribe`](unsubscribe.html)** - 停止收听有关特定主题的最新消息。
 
 
 ## [Server Info Methods](server-info-methods.html)
 
 使用这些方法可检索有关`Ripple`服务器当前状态的信息。
 
-* **[`fee`](fee.html)** - Get information about transaction cost.
-* **[`server_info`](server_info.html)** - Retrieve status of the server in human-readable format.
-* **[`server_state`](server_state.html)** - Retrieve status of the server in machine-readable format.
-- **[`manifest`](manifest.html)** - Retrieve the latest ephemeral public key information about a known validator.
+* **[`fee`](fee.html)** - 获取有关交易成本的信息。
+* **[`server_info`](server_info.html)** - 以可读格式检索服务器的状态。
+* **[`server_state`](server_state.html)** - 以机器可读格式检索服务器的状态。
+- **[`manifest`](manifest.html)** - 检索有关已知验证程序的最新临时公钥信息。
 
 ## [Utility Methods](utility-methods.html)
 

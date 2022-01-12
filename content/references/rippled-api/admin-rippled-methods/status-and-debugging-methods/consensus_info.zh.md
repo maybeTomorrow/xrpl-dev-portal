@@ -231,7 +231,7 @@ The results of the `consensus_info` command can vary dramatically if you run it 
 
 ### Possible Errors
 
-- Any of the [universal error types][].
+- 任何[通用错误类型][]。
 - `reportingUnsupported` - ([Reporting Mode][] servers only) This method is not available in Reporting Mode.
 
 <!--{# common link defs #}-->

@@ -42,7 +42,7 @@ rippled random
 
 <!-- MULTICODE_BLOCK_END -->
 
-The request includes no parameters.
+请求不包含任何参数。
 
 ## Response Format
 
@@ -89,15 +89,15 @@ The request includes no parameters.
 
 <!-- MULTICODE_BLOCK_END -->
 
-The response follows the [standard format][], with a successful result containing the following field:
+响应遵循[标准格式][]，成功的结果包含以下字段:
 
 | `Field`  | Type   | Description               |
 |:---------|:-------|:--------------------------|
-| `random` | String | Random 256-bit hex value. |
+| `random` | String | 随机256位十六进制值。 |
 
 ## Possible Errors
 
-* Any of the [universal error types][].
+* 任何[通用错误类型][]。
 * `internal` - 发生了一些内部错误，可能与随机数生成器有关。
 
 <!--{# common link defs #}-->

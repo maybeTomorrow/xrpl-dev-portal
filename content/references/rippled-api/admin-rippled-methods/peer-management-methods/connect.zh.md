@@ -97,7 +97,7 @@ Connecting to 127.0.0.1:5005
 
 ### Possible Errors
 
-- Any of the [universal error types][].
+- 任何[通用错误类型][]。
 - `invalidParams` - 一个或多个字段指定不正确，或者缺少一个或多个必需字段。
 - Cannot connect in standalone mode - Network-related commands are disabled in stand-alone mode.
 - `reportingUnsupported` - ([Reporting Mode][] servers only) This method is not available in Reporting Mode.

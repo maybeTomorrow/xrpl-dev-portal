@@ -443,10 +443,10 @@ rippled transaction_entry C53ECF838647FA5A4C780377025FEC7999AB4182590510CA461444
 
 | `Field`        | Type                      | Description                     |
 |:---------------|:--------------------------|:--------------------------------|
-| `ledger_index` | Number - [Ledger Index][] | The ledger index of the ledger version the transaction was found in; this is the same as the one from the request. |
-| `ledger_hash`  | String - [Hash][]         | _(May be omitted)_ The identifying hash of the ledger version the transaction was found in; this is the same as the one from the request. |
-| `metadata`     | Object                    | The [transaction metadata](transaction-metadata.html), which shows the exact results of the transaction in detail. |
-| `tx_json`      | Object                    | JSON representation of the [Transaction object](transaction-formats.html) |
+| `ledger_index` | Number - [Ledger Index][] | 找到交易记录的分类帐版本的分类帐索引；这与请求中的相同。 |
+| `ledger_hash`  | String - [Hash][]         | _(可以省略)_ 在中找到交易的分类帐版本的标识哈希；这与请求中的相同。 |
+| `metadata`     | Object                    | [transaction metadata](transaction-metadata.html), 它详细地显示了交易的确切结果。 |
+| `tx_json`      | Object                    | [Transaction object](transaction-formats.html) 的JSON表示|
 
 服务器找不到事务可能有几个原因:
 
@@ -456,7 +456,7 @@ rippled transaction_entry C53ECF838647FA5A4C780377025FEC7999AB4182590510CA461444
 
 ## Possible Errors
 
-* Any of the [universal error types][].
+* 任何[通用错误类型][]。
 * `fieldNotFoundTransaction` - 请求中省略了`tx_hash`字段
 * `notYetImplemented` - 请求中未指定分类帐版本。
 * `lgrNotFound` - `ledger_hash`或`ledger_index`指定的分类帐不存在，或者确实存在，但服务器没有它。

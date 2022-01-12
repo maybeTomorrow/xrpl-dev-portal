@@ -44,7 +44,7 @@ rippled ping
 
 [Try it! >](websocket-api-tool.html#ping)
 
-The request includes no parameters.
+请求不包含任何参数。
 
 ## Response Format
 
@@ -81,7 +81,7 @@ The request includes no parameters.
 
 ## Possible Errors
 
-* Any of the [universal error types][].
+* 任何[通用错误类型][]。
 
 <!--{# common link defs #}-->
 {% include '_snippets/rippled-api-links.md' %}			

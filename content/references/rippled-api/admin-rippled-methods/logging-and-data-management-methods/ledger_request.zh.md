@@ -181,7 +181,7 @@ When the server is in the progress of fetching a ledger, but has not yet finishe
 
 ### Possible Errors
 
-- Any of the [universal error types][].
+- 任何[通用错误类型][]。
 - `invalidParams` - 一个或多个字段指定不正确，或者缺少一个或多个必需字段。 This error can also occur if you specify a ledger index equal or higher than the current in-progress ledger.
 - `lgrNotFound` - If the ledger is not yet available. This indicates that the server has started fetching the ledger, although it may fail if none of its connected peers have the requested ledger. (Previously, this error used the code `ledgerNotFound` instead.) [Updated in: rippled 0.30.1][]
 - `reportingUnsupported` - ([Reporting Mode][] servers only) This method is not available in Reporting Mode.

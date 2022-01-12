@@ -210,7 +210,7 @@ The following parameter is deprecated and may be removed without further notice:
 
 ## Possible Errors
 
-* Any of the [universal error types][].
+* 任何[通用错误类型][]。
 * `invalidParams` - 一个或多个字段指定不正确，或者缺少一个或多个必需字段。
 * `actNotFound` - 在请求的`帐户`字段中指定的[地址][]与分类帐中的帐户不对应。
 * `lgrNotFound` - `ledger_hash`或`ledger_index`指定的分类帐不存在，或者确实存在，但服务器没有它。

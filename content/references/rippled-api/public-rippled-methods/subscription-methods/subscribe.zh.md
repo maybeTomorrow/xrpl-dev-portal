@@ -124,7 +124,7 @@ The response follows the [standard format][]. The fields contained in the respon
 
 ## Possible Errors
 
-* Any of the [universal error types][].
+* 任何[通用错误类型][]。
 * `invalidParams` - 一个或多个字段指定不正确，或者缺少一个或多个必需字段。
 * `noPermission` - The request included the `url` field, but you are not connected as an admin.
 * `unknownStream` - One or more the members of the `streams` field of the request is not a valid stream name.

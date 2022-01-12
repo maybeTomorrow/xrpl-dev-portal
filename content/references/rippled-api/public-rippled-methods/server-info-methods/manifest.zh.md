@@ -144,7 +144,7 @@ If provided, the `details` object contains the following fields:
 
 ### Possible Errors
 
-- Any of the [universal error types][].
+- 任何[通用错误类型][]。
 - `invalidParams` - `public_key`字段丢失或指定不正确。
 - `reportingUnsupported` - ([Reporting Mode][] )此方法在报告模式下不可用。
 

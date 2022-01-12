@@ -162,7 +162,7 @@ Connecting to 127.0.0.1:5005
 
 ## Possible Errors
 
-- Any of the [universal error types][].
+- 任何[通用错误类型][]。
 
 
 <!--{# common link defs #}-->

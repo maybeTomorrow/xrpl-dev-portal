@@ -413,7 +413,7 @@ The `metrics` object contains the following fields:
 
 ### Possible Errors
 
-- Any of the [universal error types][].
+- 任何[通用错误类型][]。
 - `reportingUnsupported` - ([Reporting Mode][] servers only) This method is not available in Reporting Mode.
 
 <!--{# common link defs #}-->

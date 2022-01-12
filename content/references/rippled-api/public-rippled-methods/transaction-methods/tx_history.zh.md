@@ -53,7 +53,7 @@ rippled tx_history 0
 
 | `Field` | Type             | Description                          |
 |:--------|:-----------------|:-------------------------------------|
-| `start` | Unsigned Integer | Number of transactions to skip over. |
+| `start` | Unsigned Integer | 要跳过的事务数。 |
 
 ## Response Format
 
@@ -1440,16 +1440,16 @@ rippled tx_history 0
 
 | `Field` | Type             | Description                               |
 |:--------|:-----------------|:------------------------------------------|
-| `index` | Unsigned Integer | The value of `start` used in the request. |
-| `txs`   | Array            | Array of transaction objects.             |
+| `index` | Unsigned Integer | 请求中使用的`start`的值。 |
+| `txs`   | Array            | 事务对象数组。             |
 
-The fields included in each transaction object vary slightly depending on the type of transaction. See [Transaction Format](transaction-formats.html) for details.
+每个事务对象中包含的字段根据事务的类型略有不同。 有关详细信息，请参阅[事务格式](transaction-formats.html)。
 
 ## Possible Errors
 
-* Any of the [universal error types][].
+* 任何[通用错误类型][]。
 * `invalidParams` - 一个或多个字段指定不正确，或者缺少一个或多个必需字段。
-* `noPermission` - The `start` field specified was greater than 10000, but you are not connected to the server as an admin.
+* `noPermission` - 指定的`start`字段大于10000，但您没有以管理员身份连接到服务器。
 
 
 {% include '_snippets/rippled_versions.md' %}
